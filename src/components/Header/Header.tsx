@@ -1,12 +1,14 @@
 import './Header.css';
-import { List } from 'phosphor-react';
+import avatar from '../../assets/images/cartoon-dog.png'
 
 export default function Header() {
   return (
     <header>
       <div className="box">
         <span className="logo">Pawmetrics</span>
-        <List size={32} />
+        <div className='avatar-container'>
+          <img src={avatar} alt="Avatar photo" />
+        </div>
       </div>
     </header>
   );

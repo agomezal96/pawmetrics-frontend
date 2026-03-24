@@ -1,14 +1,38 @@
 header {
-    padding: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+
+  position: sticky;
+  top: 0;
+  z-index: 50;
 }
 
 .box {
-    max-width: 1140px;
-    display: flex;
-    justify-content: space-between;
+  width: 100%;
+  max-width: 1140px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.avatar-container {
+  width: 45px; /* Ajusta el tamaño de la burbuja aquí */
+  height: 45px;
+  border-radius: 50%; /* Lo hace circular */
+  overflow: hidden; /* Corta la imagen si es más grande que el círculo */
+  border: 2px solid var(--color-principal, #ccc); /* Opcional: un borde */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
 }
 
 .logo {
-    font-family: "BogartCustom", 'Times New Roman', Times, serif;
-    font-size: 2rem;
+  font-family: 'Bogart', 'Times New Roman', Times, serif;
+  font-size: 2rem;
+  color: var(--text-black);
 }
