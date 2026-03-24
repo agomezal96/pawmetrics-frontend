@@ -1,0 +1,7 @@
+.bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
+  grid-template-rows: auto;
+  gap: 16px;
+  padding: 20px;
+}
