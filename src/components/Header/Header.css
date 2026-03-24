@@ -1,0 +1,14 @@
+header {
+    padding: 1rem;
+}
+
+.box {
+    max-width: 1140px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: "BogartCustom", 'Times New Roman', Times, serif;
+    font-size: 2rem;
+}
