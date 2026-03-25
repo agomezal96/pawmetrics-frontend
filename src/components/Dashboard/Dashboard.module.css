@@ -2,6 +2,9 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columnas iguales */
   grid-template-rows: auto;
-  gap: 16px;
-  padding: 20px;
+  align-items: start;
+  height: 100%;
+  gap: 1.5rem;
+  padding: 1rem 2rem;
+  background-color: var(--soft-white);
 }
