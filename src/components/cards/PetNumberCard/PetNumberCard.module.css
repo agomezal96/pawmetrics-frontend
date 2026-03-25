@@ -1,0 +1,10 @@
+.pet-number-card {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px;
+}
+
+.number-of-pets {
+    font-weight: bold;
+    font-size: 2rem;
+}
