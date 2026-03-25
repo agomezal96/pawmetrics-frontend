@@ -1,8 +1,8 @@
-import type { Earnings } from '../../../types/Types';
+import type { EarningsStats } from '../../../types/dashboard';
 import styles from './EarningsCard.module.css';
 
 interface EarningsCardProps {
-  earnings: Earnings;
+  earnings: EarningsStats;
 }
 
 export default function EarningsCard({ earnings }: EarningsCardProps) {
