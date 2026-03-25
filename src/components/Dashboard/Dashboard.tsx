@@ -1,10 +1,10 @@
-import './Dashboard.css';
+import type { ReactNode } from 'react';
+import styles from './Dashboard.module.css';
 
-export default function Dashboard() {
-    
-  return (
-    <div className="bento-grid">
-      
-    </div>
-  );
+interface DashboardProps {
+  children: ReactNode;
+}
+
+export default function Dashboard({ children }: DashboardProps) {
+  return <div className={styles['bento-grid']}>{children}</div>;
 }
