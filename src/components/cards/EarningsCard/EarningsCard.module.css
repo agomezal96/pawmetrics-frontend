@@ -1,0 +1,33 @@
+.earning-card {
+  max-width: 250px;
+}
+
+.box-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.earning-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.current-earnings {
+  color: var(--success);
+}
+
+.earning-card h3 {
+  font-size: 1rem;
+}
+
+.pending-earnings {
+color: var(--text-gray);}
+
+.time {
+  color: var(--text-gray);
+  text-align: center;
+}
