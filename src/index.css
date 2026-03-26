@@ -98,4 +98,5 @@ body {
     color: var(--text-gray);
     font-size: 0.875rem;
     margin-bottom: 0.5rem;
+    font-weight: 700;
 }
