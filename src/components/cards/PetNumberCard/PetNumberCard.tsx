@@ -16,7 +16,7 @@ export default function PetNumberCard({
     <article className={`card ${styles['pet-number-card']}`}>
       {icon}
       <p className={styles['number-of-pets']}>{numberOfPets}</p>
-      <p>{label}</p>
+      <p className={styles['label-text']}>{label}</p>
     </article>
   );
 }
