@@ -7,9 +7,12 @@
 
 .cards-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row; /* Cambiamos a horizontal */
+  flex-wrap: wrap; /* Si no caben, saltan de línea */
+  gap: 1rem;
+  width: 100%;
 }
 
 .cards-container > * {
-    flex: 1 1 250px; /* They grow, shrink and has a minimum of 250px */
+  flex: 1 1 250px; /* They grow, shrink and has a minimum of 250px */
 }
