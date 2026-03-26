@@ -1,4 +1,4 @@
-import type { Booking } from "./Booking";
+import type { Booking } from "./booking";
 import type { Review } from "./reviews";
 
 export interface PetStats {
