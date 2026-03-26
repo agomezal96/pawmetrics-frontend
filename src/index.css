@@ -59,6 +59,7 @@ h1, h2, h3, h4, h5, h6 {
 :root {
   --text-black: rgb(31, 33, 36);
   --text-gray: rgb(98, 104, 110);
+  --subtle-gray: rgb(226, 225, 225);
   --accent: rgb(46, 103, 209);
   --brand: rgb(0, 189, 112);
   --success: rgb(22, 154, 91);
@@ -85,7 +86,7 @@ body {
   padding: 1rem;
   background-color: var(--pure-white);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Un toque suave */
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
