@@ -1,10 +1,25 @@
-import type { ReactNode } from 'react';
 import styles from './Dashboard.module.css';
+import EarningsCard from '../cards/EarningsCard';
+import PetNumberCard from '../cards/PetNumberCard';
+import { Cat, Dog } from 'phosphor-react';
+import FutureBookingCard from '../cards/FutureBookingsCard';
+import { mockEarnings, mockFutureBooking } from '../../mocks/mockData';
 
-interface DashboardProps {
-  children: ReactNode;
-}
-
-export default function Dashboard({ children }: DashboardProps) {
-  return <div className={styles['bento-grid']}>{children}</div>;
+export default function Dashboard() {
+  return (
+    <div className={styles['bento-grid']}>
+      <EarningsCard earnings={mockEarnings} />
+      <PetNumberCard
+        icon={<Dog size={32} />}
+        numberOfPets={4}
+        label="Total Dogs"
+      />
+      <PetNumberCard
+        icon={<Cat size={32} />}
+        numberOfPets={6}
+        label="Total Cats"
+      />
+      <FutureBookingCard booking={mockFutureBooking} />
+    </div>
+  );
 }
