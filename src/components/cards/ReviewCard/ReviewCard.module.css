@@ -1,0 +1,30 @@
+.review-card {
+  align-self: start;
+}
+
+.avatar-and-name {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.requester-name {
+  font-weight: 700;
+}
+
+.description {
+  font-style: italic;
+}
+
+.avatar-container {
+  width: 45px; /* Ajusta el tamaño de la burbuja aquí */
+  height: 45px;
+  border-radius: 50%; /* Lo hace circular */
+  overflow: hidden; /* Corta la imagen si es más grande que el círculo */
+  border: 2px solid var(--color-principal, #ccc); /* Opcional: un borde */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f0f0f0;
+}
