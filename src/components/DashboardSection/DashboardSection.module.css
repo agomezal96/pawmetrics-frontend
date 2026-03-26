@@ -1,8 +1,10 @@
 .section-title {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
   color: var(--text-gray);
-  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .cards-container {
