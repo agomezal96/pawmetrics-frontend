@@ -1,0 +1,15 @@
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-gray);
+  margin-bottom: 1rem;
+}
+
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.cards-container > * {
+    flex: 1 1 250px; /* They grow, shrink and has a minimum of 250px */
+}
