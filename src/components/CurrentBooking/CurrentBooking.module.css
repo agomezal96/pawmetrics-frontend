@@ -1,0 +1,37 @@
+.booking-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.pet-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pet-name {
+  font-weight: 700;
+  font-size: 1.5rem;
+
+}
+
+.breed {
+  color: var(--text-gray);
+  font-size: 0.875rem;
+}
+
+.service {
+  color: var(--text-gray);
+}
+
+.booking-end {
+  color: var(--accent);
+}
+
+.requester-name {
+  text-align: center;
+  font-weight: 600;
+}
