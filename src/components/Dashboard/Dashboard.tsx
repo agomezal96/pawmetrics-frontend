@@ -10,24 +10,41 @@ import {
 } from '../../mocks/mockData';
 import CurrentBooking from '../CurrentBooking';
 import ReviewCard from '../cards/ReviewCard';
+import DashboardSection from '../DashboardSection';
 
 export default function Dashboard() {
   return (
-    <div className={styles['bento-grid']}>
-      <EarningsCard earnings={mockEarnings} />
-      <PetNumberCard
-        icon={<Dog size={32} />}
-        numberOfPets={4}
-        label="Total Dogs"
-      />
-      <PetNumberCard
-        icon={<Cat size={32} />}
-        numberOfPets={6}
-        label="Total Cats"
-      />
-      <FutureBookingCard booking={mockFutureBooking} />
-      <CurrentBooking booking={mockFutureBooking} />
-      <ReviewCard review={mockReview} />
+    <div className={styles['dashboard-container']}>
+      <p className={styles['title-welcome']}>Hello, Andrea</p>
+        <p className={styles['p-welcome']}>Here you can easily track your earnings, manage upcoming bookings, and keep an eye on your pet stats.</p>
+      <div className={styles['bento-grid']}>
+        <EarningsCard earnings={mockEarnings} />
+        <DashboardSection sectionTitle="Total pets you have sitted">
+          <PetNumberCard
+            icon={<Dog size={32} />}
+            numberOfPets={4}
+            label="Total Dogs"
+          />
+          <PetNumberCard
+            icon={<Cat size={32} />}
+            numberOfPets={6}
+            label="Total Cats"
+          />
+        </DashboardSection>
+        <DashboardSection sectionTitle="Current Bookings">
+          <CurrentBooking booking={mockFutureBooking} />
+          <CurrentBooking booking={mockFutureBooking} />{' '}
+          <CurrentBooking booking={mockFutureBooking} />
+        </DashboardSection>
+        <DashboardSection sectionTitle="Future Bookings">
+          <FutureBookingCard booking={mockFutureBooking} />
+        </DashboardSection>
+        <DashboardSection sectionTitle="Reviews">
+          <ReviewCard review={mockReview} />
+          <ReviewCard review={mockReview} />
+          <ReviewCard review={mockReview} />
+        </DashboardSection>
+      </div>
     </div>
   );
 }
