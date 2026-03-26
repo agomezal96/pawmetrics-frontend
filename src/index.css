@@ -129,12 +129,3 @@ body {
   transform: translateY(-4px); /* Efecto interactivo sutil */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
-
-.card-title {
-  font-variant: small-caps;
-  letter-spacing: 0.03em;
-  color: var(--text-gray);
-  font-size: 0.875rem;
-  margin-bottom: 0.5rem;
-  font-weight: 700;
-}
