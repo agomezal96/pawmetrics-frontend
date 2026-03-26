@@ -3,8 +3,13 @@ import EarningsCard from '../cards/EarningsCard';
 import PetNumberCard from '../cards/PetNumberCard';
 import { Cat, Dog } from 'phosphor-react';
 import FutureBookingCard from '../cards/FutureBookingsCard';
-import { mockEarnings, mockFutureBooking } from '../../mocks/mockData';
+import {
+  mockEarnings,
+  mockFutureBooking,
+  mockReview,
+} from '../../mocks/mockData';
 import CurrentBooking from '../CurrentBooking';
+import ReviewCard from '../cards/ReviewCard';
 
 export default function Dashboard() {
   return (
@@ -22,6 +27,7 @@ export default function Dashboard() {
       />
       <FutureBookingCard booking={mockFutureBooking} />
       <CurrentBooking booking={mockFutureBooking} />
+      <ReviewCard review={mockReview} />
     </div>
   );
 }

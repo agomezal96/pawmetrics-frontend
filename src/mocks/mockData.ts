@@ -1,5 +1,6 @@
 import type { Booking } from "../types/booking";
 import type { EarningsStats } from "../types/dashboard";
+import type { Review } from "../types/reviews";
 
 const mockEarnings: EarningsStats = {
   past_earnings: 1200,
@@ -19,4 +20,12 @@ const mockFutureBooking: Booking = {
   requester_name: 'Rossana Liendo',
 };
 
-export {mockEarnings, mockFutureBooking}
+const mockReview: Review = {
+  id: 1,
+  stars: 5,
+  description: "Nana was very happy when she came back at home. Thank you very much for taking care of her 💕",
+  booking: 2,
+  requester_name: 'Rossana Liendo'
+}
+
+export {mockEarnings, mockFutureBooking, mockReview}
