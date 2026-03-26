@@ -5,7 +5,6 @@
   text-transform: uppercase;
   letter-spacing: 0.05rem;
   margin-bottom: 0.25rem;
-  /* Alineamos a la izquierda para que siga el flujo natural de la card */
   text-align: left; 
 }
 
@@ -22,17 +21,6 @@
   align-items: center;
 }
 
-/* Un toque de color al icono para que no se vea plano */
-.icon-wrapper {
-  color: var(--accent);
-  background-color: #f0f7f0; /* Un fondo muy sutil */
-  padding: 8px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .pet-details {
   display: flex;
   flex-direction: column;
@@ -40,7 +28,7 @@
 
 .pet-name {
   font-weight: 800;
-  font-size: 1.3rem; /* Un poco más pequeño para que quepa en 1 sola columna */
+  font-size: 1.3rem; 
   margin: 0;
   line-height: 1.2;
 }

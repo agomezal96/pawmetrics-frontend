@@ -12,11 +12,11 @@ export default function FutureBookingCard({ booking }: FutureBookingProps) {
       <p className={styles.date}>{booking.start_date}</p>
       <div className={styles['future-booking-content']}>
         <div className={styles['icon-and-name']}>
-          <div className={styles['icon-wrapper']}>
+          <div className="icon-wrapper">
             {booking.pet_species === 'Dog' ? (
-              <Dog size={26} weight="bold" />
+              <Dog size={26} />
             ) : (
-              <Cat size={26} weight="bold" />
+              <Cat size={26} />
             )}
           </div>
 

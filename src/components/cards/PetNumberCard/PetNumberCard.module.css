@@ -10,10 +10,6 @@
   flex: 1;
 }
 
-.pet-number-card svg {
-  margin-bottom: 0.5rem;
-}
-
 .number-of-pets {
   font-weight: 800;
   font-size: 2.5rem;

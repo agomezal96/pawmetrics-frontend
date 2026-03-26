@@ -14,7 +14,10 @@ export default function PetNumberCard({
 }: petNumberCardProps) {
   return (
     <article className={`card ${styles['pet-number-card']}`}>
+      <div className='icon-wrapper'>
       {icon}
+
+      </div>
       <p className={styles['number-of-pets']}>{numberOfPets}</p>
       <p className={styles['label-text']}>{label}</p>
     </article>

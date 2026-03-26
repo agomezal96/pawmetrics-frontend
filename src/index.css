@@ -129,3 +129,24 @@ body {
   transform: translateY(-4px); /* Efecto interactivo sutil */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
+
+.icon-wrapper {
+/* Dimensiones fijas */
+  width: 48px;
+  height: 48px;
+  
+  /* Círculo perfecto */
+  border-radius: 50%;
+  
+  /* Centrado del icono interior */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* ¡LA CLAVE! Evita que se deforme si el padre lo estira */
+  flex-shrink: 0; 
+  
+  /* Estética Rover */
+  background-color: #f0f7f0;
+  color: var(--accent);
+}
