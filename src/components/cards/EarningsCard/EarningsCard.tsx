@@ -22,7 +22,6 @@ export default function EarningsCard({ earnings }: EarningsCardProps) {
           </p>
         </div>
       </section>
-      <p className="time">This year</p>
     </article>
   );
 }
