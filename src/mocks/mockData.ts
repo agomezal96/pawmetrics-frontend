@@ -1,5 +1,5 @@
 import type { Booking } from "../types/booking";
-import type { EarningsStats } from "../types/dashboard";
+import type { EarningsStats, PetStats } from "../types/dashboard";
 import type { Review } from "../types/reviews";
 
 const mockEarnings: EarningsStats = {
@@ -28,4 +28,10 @@ const mockReview: Review = {
   requester_name: 'Rossana Liendo'
 }
 
-export {mockEarnings, mockFutureBooking, mockReview}
+const mockTotalPets: PetStats = {
+  total_dogs: 4,
+  total_cats: 6,
+  total_pets: 10,
+}
+
+export {mockEarnings, mockFutureBooking, mockReview, mockTotalPets}
