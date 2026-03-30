@@ -7,7 +7,8 @@ import ReviewModule from '../modules/ReviewModule/ReviewModule';
 
 import useGetRequest from '../../hooks/useGetRequest';
 import type { DashboardMetrics } from '../../types/dashboard';
-import LoadingModule from '../modules/LoadingModule';
+import LoadingDashboard from '../LoadingDashboard';
+import ErrorDashboard from '../ErrorDashboard/ErrorDashboard';
 
 export default function Dashboard() {
   const baseUrl = import.meta.env.VITE_API_METRICS_URL;
@@ -18,8 +19,8 @@ export default function Dashboard() {
     error,
   } = useGetRequest<DashboardMetrics>(baseUrl);
 
-  if (isLoading) return <LoadingModule />;
-  if (error) return <p>Error: {error}</p>;
+  if (isLoading) return <LoadingDashboard />;
+  if (error) return <ErrorDashboard message={error} />;
   if (!dashboardMetrics) return null;
 
   const { bookings, earnings, pets, reviews } = dashboardMetrics;

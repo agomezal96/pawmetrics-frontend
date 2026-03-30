@@ -1,6 +1,6 @@
-import styles from './LoadingModule.module.css'
+import styles from './LoadingDashboard.module.css'
 
-export default function LoadingModule() {
+export default function LoadingDashboard() {
     return (
     <div className={styles['loading-container']}>
       {/* El spinner es un div vacío al que animaremos con CSS */}

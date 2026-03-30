@@ -14,12 +14,22 @@ export default function useGetRequest<T>(url: string) {
         console.log(backendData);
 
         if (!response.ok) {
-          throw new Error(backendData.error || 'Server Error');
+          // If it's a 404 or 500, we throw an error with the code
+          console.error(`❌ Request failed at: ${url} | Status: ${response.status}`);
+          throw new Error(
+            `Error ${response.status}: ${response.statusText || 'Not Found'}`,
+          );
         }
         setRequestData(backendData);
       } catch (error) {
+        // Here we capture both network errors and the error we launched above.
         if (error instanceof Error) {
-          setError(error.message);
+          // If the message is from the JSON, we translate it into something human-readable
+          const cleanMessage = error.message.includes('Unexpected token')
+            ? 'The server returned an invalid format (probably an HTML error page).'
+            : error.message;
+
+          setError(cleanMessage);
         }
       } finally {
         setIsLoading(false);
