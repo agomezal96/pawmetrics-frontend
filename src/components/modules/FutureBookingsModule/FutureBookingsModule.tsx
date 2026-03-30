@@ -10,9 +10,15 @@ export default function FutureBookingsModule({ bookings }: FutureBookingProps) {
   return (
     <>
       <DashboardSection sectionTitle="Future Bookings">
-        {bookings.map((booking) => (
-          <FutureBookingCard key={booking.id} booking={booking} />
-        ))}
+        {bookings.length === 0 ? (
+          <div className="empty-container">
+            <p className="empty-text">No upcoming bookings scheduled.</p>
+          </div>
+        ) : (
+          bookings.map((booking) => (
+            <FutureBookingCard key={booking.id} booking={booking} />
+          ))
+        )}
       </DashboardSection>
     </>
   );
