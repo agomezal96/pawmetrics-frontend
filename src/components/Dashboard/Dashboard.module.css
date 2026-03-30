@@ -21,37 +21,72 @@
 .bento-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.5rem;
+  gap: 2rem;
+  grid-auto-rows: min-content;
+  align-items: start;
 }
 
-/* Tablet: 2 columns */
-@media (min-width: 768px) {
+.bento-grid > section {
+  grid-column: span 1;
+  grid-row: auto;
+  height: auto;
+  min-height: min-content;
+  display: block;
+}
+
+/* --- TABLET (768px to 1023px) --- */
+@media (min-width: 768px) and (max-width: 1023px) {
   .bento-grid {
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
+    gap: 1.5rem;
+  }
+
+  .bento-grid > section:nth-child(1) { 
+    grid-column: span 2; 
+  }
+
+  .bento-grid > section:nth-child(2) { 
+    grid-column: span 2; 
+  }
+
+  .bento-grid > section:nth-child(3) { 
+    grid-column: span 2; 
+  }
+
+  .bento-grid > section:nth-child(4) { 
+    grid-column: span 1; 
+  }
+
+  .bento-grid > section:nth-child(5) { 
+    grid-column: span 1; 
   }
 }
-
 /* Desktop: */
 @media (min-width: 1024px) {
+  .dashboard-container {
+    padding: 2rem;
+  }
   .bento-grid {
     grid-template-columns: repeat(4, 1fr);
-    grid-auto-rows: minmax(150px, auto);
+grid-auto-rows: auto;
+    gap: 1.5rem;
   }
 
-  /* Optional classes for giving Bento shape */
-  .bento-grid > section:nth-child(1) {
-    grid-column: span 2;
-  } /* Earnings wider */
-  .bento-grid > section:nth-child(2) {
-    grid-column: span 2;
-  } /* Pet Stats */
-  .bento-grid > section:nth-child(3) {
-    grid-column: span 3;
-  } /* Current Bookings (priority) */
-  .bento-grid > section:nth-child(4) {
-    grid-column: span 1;
-  } /* Future Bookings */
-  .bento-grid > section:nth-child(5) {
-    grid-column: span 4;
-  } /* Reviews abajo a lo ancho */
+  .bento-grid > section {
+    display: flex;
+    flex-direction: column;
+    height: 100% !important;
+  }
+
+  .bento-grid > section:nth-child(1) { grid-column: span 2; } /* Earnings */
+  .bento-grid > section:nth-child(2) { grid-column: span 2; } /* Pet Stats */
+  
+  .bento-grid > section:nth-child(3) { 
+    grid-column: span 3; 
+    grid-row: span 2; 
+  } 
+  
+  .bento-grid > section:nth-child(4) { grid-column: span 1; } /* Future */
+  .bento-grid > section:nth-child(5) { grid-column: span 4; } /* Reviews */
 }

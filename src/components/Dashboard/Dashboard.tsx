@@ -11,6 +11,7 @@ import {
 import CurrentBooking from '../CurrentBooking';
 import ReviewCard from '../cards/ReviewCard';
 import DashboardSection from '../DashboardSection';
+import CurrentBookingHeader from '../CurrentBookingHeader';
 
 export default function Dashboard() {
   return (
@@ -36,9 +37,10 @@ export default function Dashboard() {
             label="Total Cats"
           />
         </DashboardSection>
-        <DashboardSection sectionTitle="Current Bookings">
+        <DashboardSection sectionTitle="Current Bookings" isList={true}>
+          <CurrentBookingHeader/>
           <CurrentBooking booking={mockFutureBooking} />
-          <CurrentBooking booking={mockFutureBooking} />{' '}
+          <CurrentBooking booking={mockFutureBooking} />
           <CurrentBooking booking={mockFutureBooking} />
         </DashboardSection>
         <DashboardSection sectionTitle="Future Bookings">

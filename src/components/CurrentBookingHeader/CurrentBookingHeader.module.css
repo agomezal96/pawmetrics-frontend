@@ -2,7 +2,6 @@
   display: none; /* Hidden in mobile */
   padding: 0.5rem 2rem;
   margin-bottom: 0.5rem;
-  text-align: c;
 }
 
 @media (min-width: 768px) {

@@ -8,7 +8,7 @@ interface CurrentBookingProps {
 
 export default function CurrentBooking({ booking }: CurrentBookingProps) {
   return (
-    <article className={`card ${styles['booking-row']}`}>
+    <article className={styles['booking-row']}>
       {/* Group 1: Pet */}
       <div className={styles['pet-data']}>
         <div className='icon-wrapper'>
