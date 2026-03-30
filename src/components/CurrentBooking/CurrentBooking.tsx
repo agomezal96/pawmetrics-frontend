@@ -1,6 +1,7 @@
 import styles from './CurrentBooking.module.css';
 import type { Booking } from '../../types/booking';
 import { Cat, Dog } from 'phosphor-react';
+import { getTimeRemaining } from '../../utils/date-formatter';
 
 interface CurrentBookingProps {
   booking: Booking;
@@ -27,7 +28,7 @@ export default function CurrentBooking({ booking }: CurrentBookingProps) {
 
       {/* Group 3: Date */}
       <div className={styles['date-info']}>
-        <p className={styles['booking-end']}>Until {booking.end_date}</p>
+        <p className={styles['booking-end']}>Until {getTimeRemaining(booking.end_date)}</p>
       </div>
 
       {/* Group 4: Owner */}
