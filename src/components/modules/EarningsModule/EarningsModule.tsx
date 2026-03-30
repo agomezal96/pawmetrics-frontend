@@ -1,6 +1,6 @@
-import type { EarningsStats } from '../../types/dashboard';
-import EarningsCard from '../cards/EarningsCard';
-import DashboardSection from '../DashboardSection';
+import type { EarningsStats } from '../../../types/dashboard';
+import EarningsCard from '../../cards/EarningsCard';
+import DashboardSection from '../../DashboardSection';
 
 interface EarningsModuleProps {
   earnings: EarningsStats;
