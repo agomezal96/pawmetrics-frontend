@@ -20,7 +20,9 @@
   margin: 0;
 }
 
-.breed, .service, .requester-label {
+.breed,
+.service,
+.requester-label {
   color: var(--text-gray);
   font-size: 0.85rem;
   margin: 0;
@@ -45,10 +47,10 @@
 /* --- TABLET / DESKTOP (Layout de Fila) --- */
 @media (min-width: 768px) {
   .booking-row {
-    flex-direction: row; /* Se convierte en fila */
-    justify-content: space-between;
-    text-align: left;
-    padding: 1rem 2rem;
+    border-radius: 0; /* Quitamos redondeado para que parezcan filas pegadas */
+    border: none;
+    border-bottom: 1px solid var(--pure-white);
+    box-shadow: none; /* Quitamos sombra individual */
   }
 
   .pet-data {
@@ -61,7 +63,9 @@
     flex-direction: column;
   }
 
-  .service-info, .date-info, .requester-info {
+  .service-info,
+  .date-info,
+  .requester-info {
     flex: 1;
     display: flex;
     align-items: center;
@@ -70,5 +74,34 @@
 
   .requester-label {
     display: none; /* En desktop no hace falta el label "Owner" si están alineados */
+  }
+}
+
+/* ... (tus estilos de mobile se quedan igual) ... */
+
+@media (min-width: 768px) {
+  .booking-row {
+    display: grid !important; /* Cambiamos flex por grid */
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* Exactamente igual al header */
+    gap: 1rem;
+    align-items: center;
+    text-align: left;
+    padding: 1rem 2rem;
+    width: 100%;
+  }
+
+  .pet-data {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+
+  /* Centramos el contenido de las columnas intermedias para que respiren */
+  .service-info,
+  .date-info,
+  .requester-info {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
   }
 }

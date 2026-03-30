@@ -1,7 +1,14 @@
 section {
   display: flex;
   flex-direction: column;
-  height: 100%; /* Obligatorio para que la sección llene el hueco del grid */
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  section {
+    /* Solo en desktop queremos que rellene el hueco del grid */
+    height: 100%; 
+  }
 }
 
 .section-title {
@@ -15,14 +22,38 @@ section {
 
 .cards-container {
   display: flex;
-  flex-direction: row; /* Cambiamos a horizontal */
-  flex-wrap: wrap; /* Si no caben, saltan de línea */
+  flex-direction: row;
+  flex-wrap: wrap;
   gap: 1rem;
   width: 100%;
-  flex: 1;
 }
 
 .cards-container > * {
   display: flex;
-  flex: 1 1 250px; /* They grow, shrink and has a minimum of 250px */
+  width: 100%;
+  box-sizing: border-box;
+  flex: 1 1 250px;
+}
+
+.is-list {
+  flex-direction: column ;
+  gap: 0; 
+  background-color:var(--pure-white);
+  border-radius: 12px; 
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--pure-white);
+  overflow: hidden;
+  box-shadow: none;
+  border-radius: 12px;
+}
+
+.is-list > *:last-child {
+  border-bottom: none;
+}
+
+.is-list > * {
+  flex: 0 0 auto;
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid var(--pure-white);
 }
