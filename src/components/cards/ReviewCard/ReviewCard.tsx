@@ -1,6 +1,6 @@
 import styles from './ReviewCard.module.css';
 import type { Review } from '../../../types/reviews';
-import avatar from '../../../assets/images/cartoon-dog.png';
+import { User } from 'phosphor-react';
 
 interface ReviewCardProps {
   review: Review;
@@ -11,7 +11,7 @@ export default function ReviewCard({ review }: ReviewCardProps) {
     <article className={`card ${styles['review-card']}`}>
       <div className={styles['avatar-and-name']}>
         <div className={styles['avatar-container']}>
-          <img src={avatar} alt="Avatar picture" />
+          <User size={32}/>
         </div>
         <p className={styles['requester-name']}>{review.requester_name}</p>
       </div>
