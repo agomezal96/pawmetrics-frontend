@@ -11,7 +11,7 @@ export default function FutureBookingsModule({ bookings }: FutureBookingProps) {
     <>
       <DashboardSection sectionTitle="Future Bookings">
         {bookings.map((booking) => (
-          <FutureBookingCard booking={booking} />
+          <FutureBookingCard key={booking.id} booking={booking} />
         ))}
       </DashboardSection>
     </>

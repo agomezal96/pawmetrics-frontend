@@ -13,7 +13,7 @@ export default function CurrentBookingModule({ booking }: CurrentBookingProps) {
       <DashboardSection sectionTitle="Current Bookings" isList={true}>
         <CurrentBookingHeader />
         {booking.map((booking) => (
-          <CurrentBooking booking={booking} />
+          <CurrentBooking key={booking.id} booking={booking} />
         ))}
       </DashboardSection>
     </>
