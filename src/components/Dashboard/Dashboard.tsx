@@ -1,17 +1,28 @@
 import styles from './Dashboard.module.css';
-import {
-  mockEarnings,
-  mockFutureBooking,
-  mockReview,
-  mockTotalPets,
-} from '../../mocks/mockData';
 import EarningsModule from '../modules/EarningsModule';
 import TotalPetsModule from '../modules/TotalPetsModule';
 import CurrentBookingModule from '../modules/CurrentBookingsModule';
 import FutureBookingsModule from '../modules/FutureBookingsModule';
 import ReviewModule from '../modules/ReviewModule/ReviewModule';
 
+import useGetRequest from '../../hooks/useGetRequest';
+import type { DashboardMetrics } from '../../types/dashboard';
+
 export default function Dashboard() {
+  const baseUrl = import.meta.env.VITE_API_METRICS_URL;
+
+  const {
+    requestData: dashboardMetrics,
+    isLoading,
+    error,
+  } = useGetRequest<DashboardMetrics>(baseUrl);
+
+  if (isLoading) return <p>Loading metrics...</p>;
+  if (error) return <p>Error: {error}</p>;
+  if (!dashboardMetrics) return null;
+
+  const { bookings, earnings, pets, reviews } = dashboardMetrics;
+
   return (
     <div className={styles['dashboard-container']}>
       <p className={styles['title-welcome']}>Hello, Andrea</p>
@@ -20,15 +31,11 @@ export default function Dashboard() {
         keep an eye on your pet stats.
       </p>
       <div className={styles['bento-grid']}>
-        <EarningsModule earnings={mockEarnings} />
-        <TotalPetsModule petStats={mockTotalPets} />
-        <CurrentBookingModule
-          booking={[mockFutureBooking, mockFutureBooking, mockFutureBooking]}
-        />
-        <FutureBookingsModule
-          bookings={[mockFutureBooking, mockFutureBooking, mockFutureBooking]}
-        />
-        <ReviewModule reviews={[mockReview, mockReview, mockReview]} />
+        <EarningsModule earnings={earnings} />
+        <TotalPetsModule petStats={pets} />
+        <CurrentBookingModule booking={bookings.current_bookings} />
+        <FutureBookingsModule bookings={bookings.future_bookings} />
+        <ReviewModule reviews={reviews.latest_reviews} />
       </div>
     </div>
   );
