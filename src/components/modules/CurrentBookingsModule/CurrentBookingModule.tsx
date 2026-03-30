@@ -11,10 +11,18 @@ export default function CurrentBookingModule({ booking }: CurrentBookingProps) {
   return (
     <>
       <DashboardSection sectionTitle="Current Bookings" isList={true}>
-        <CurrentBookingHeader />
-        {booking.map((booking) => (
-          <CurrentBooking key={booking.id} booking={booking} />
-        ))}
+        {booking.length === 0 ? (
+          <div className="empty-container">
+            <p className="empty-text">No active bookings right now.</p>
+          </div>
+        ) : (
+          <>
+            <CurrentBookingHeader />
+            {booking.map((booking) => (
+              <CurrentBooking key={booking.id} booking={booking} />
+            ))}
+          </>
+        )}
       </DashboardSection>
     </>
   );
