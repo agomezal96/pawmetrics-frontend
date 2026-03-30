@@ -15,6 +15,7 @@ export default function useGetRequest<T>(url: string) {
 
         if (!response.ok) {
           // If it's a 404 or 500, we throw an error with the code
+          console.error(`❌ Request failed at: ${url} | Status: ${response.status}`);
           throw new Error(
             `Error ${response.status}: ${response.statusText || 'Not Found'}`,
           );
