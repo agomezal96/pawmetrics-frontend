@@ -7,6 +7,7 @@ import ReviewModule from '../modules/ReviewModule/ReviewModule';
 
 import useGetRequest from '../../hooks/useGetRequest';
 import type { DashboardMetrics } from '../../types/dashboard';
+import LoadingModule from '../modules/LoadingModule';
 
 export default function Dashboard() {
   const baseUrl = import.meta.env.VITE_API_METRICS_URL;
@@ -17,7 +18,7 @@ export default function Dashboard() {
     error,
   } = useGetRequest<DashboardMetrics>(baseUrl);
 
-  if (isLoading) return <p>Loading metrics...</p>;
+  if (isLoading) return <LoadingModule />;
   if (error) return <p>Error: {error}</p>;
   if (!dashboardMetrics) return null;
 
