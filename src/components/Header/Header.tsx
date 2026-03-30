@@ -1,5 +1,5 @@
 import './Header.css';
-import avatar from '../../assets/images/cartoon-dog.png'
+import { User } from 'phosphor-react';
 
 export default function Header() {
   return (
@@ -11,7 +11,7 @@ export default function Header() {
         
         <div className="user-section">
           <div className='avatar-container'>
-            <img src={avatar} alt="User profile" />
+            <User size={32} weight="regular" />
           </div>
         </div>
       </nav>
