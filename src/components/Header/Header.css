@@ -2,7 +2,7 @@ header {
   padding: 0.75rem 1.5rem; /* Un poco más de aire a los lados */
   display: flex;
   justify-content: center;
-  
+
   /* Glassmorphism */
   background-color: rgba(255, 255, 255, 0.8);
   backdrop-filter: blur(10px);
@@ -15,7 +15,7 @@ header {
 
 .box {
   width: 100%;
-  max-width: 1400px; 
+  max-width: 1400px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,16 +37,14 @@ header {
   border: 2px solid var(--brand);
   transition: transform 0.2s ease;
   cursor: pointer;
+
+  display: flex;
+  align-items: center; 
+  justify-content: center;
 }
 
 .avatar-container:hover {
   transform: scale(1.05);
-}
-
-.avatar-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
 /* --- MEDIA QUERIES--- */
@@ -55,7 +53,7 @@ header {
   .logo {
     font-size: 2rem; /* Desktop */
   }
-  
+
   .avatar-container {
     width: 48px;
     height: 48px;
