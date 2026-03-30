@@ -1,6 +1,7 @@
 import { Cat, Dog } from 'phosphor-react';
 import type { Booking } from '../../../types/booking';
 import styles from './FutureBookingCard.module.css';
+import { formatRelativeDate } from '../../../utils/date-formatter';
 
 interface FutureBookingProps {
   booking: Booking;
@@ -9,7 +10,7 @@ interface FutureBookingProps {
 export default function FutureBookingCard({ booking }: FutureBookingProps) {
   return (
     <article className="card">
-      <p className={styles.date}>{booking.start_date}</p>
+      <p className={styles.date}>{formatRelativeDate(booking.start_date)}</p>
       <div className={styles['future-booking-content']}>
         <div className={styles['icon-and-name']}>
           <div className="icon-wrapper">
