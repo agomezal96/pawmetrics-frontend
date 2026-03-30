@@ -1,15 +1,28 @@
+section {
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Obligatorio para que la sección llene el hueco del grid */
+}
+
 .section-title {
-  font-size: 1.25rem;
-  font-weight: 600;
+  font-variant: small-caps;
+  letter-spacing: 0.03em;
   color: var(--text-gray);
-  margin-bottom: 1rem;
+  font-size: 0.875rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
 }
 
 .cards-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row; /* Cambiamos a horizontal */
+  flex-wrap: wrap; /* Si no caben, saltan de línea */
+  gap: 1rem;
+  width: 100%;
+  flex: 1;
 }
 
 .cards-container > * {
-    flex: 1 1 250px; /* They grow, shrink and has a minimum of 250px */
+  display: flex;
+  flex: 1 1 250px; /* They grow, shrink and has a minimum of 250px */
 }

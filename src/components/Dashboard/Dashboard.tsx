@@ -16,9 +16,14 @@ export default function Dashboard() {
   return (
     <div className={styles['dashboard-container']}>
       <p className={styles['title-welcome']}>Hello, Andrea</p>
-        <p className={styles['p-welcome']}>Here you can easily track your earnings, manage upcoming bookings, and keep an eye on your pet stats.</p>
+      <p className={styles['p-welcome']}>
+        Here you can easily track your earnings, manage upcoming bookings, and
+        keep an eye on your pet stats.
+      </p>
       <div className={styles['bento-grid']}>
-        <EarningsCard earnings={mockEarnings} />
+        <DashboardSection sectionTitle='Earnings summary'>
+          <EarningsCard earnings={mockEarnings} />
+        </DashboardSection>
         <DashboardSection sectionTitle="Total pets you have sitted">
           <PetNumberCard
             icon={<Dog size={32} />}

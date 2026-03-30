@@ -1,24 +1,46 @@
 .earning-card {
-  max-width: 250px;
-  align-items: center;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 16px;
+  height: 100%; /* To fill the grid slot */
+  box-sizing: border-box;
 }
 
 .box-content {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  justify-content: space-around;
+  flex-direction: row;       /* Aseguramos que sea fila */
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  flex-grow: 1;
+  padding: 1rem 0;
 }
 
 .earning-box {
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-size: 2rem;
+  text-align: center;
+  flex: 1;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.earning-box h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  color: var(--text-gray);
+  margin: 0 0 0.5rem 0;
 }
 
 .current-earnings {
   color: var(--success);
+  font-size: 2.5rem;
 }
 
 .earning-card h3 {
@@ -26,9 +48,25 @@
 }
 
 .pending-earnings {
-color: var(--text-gray);}
+  color: var(--text-gray);
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.current-earnings,
+.pending-earnings {
+  margin: 0;
+  line-height: 1.1;
+}
+
+.earning-box:first-child {
+  border-right: 1px solid var(--subtle-gray);
+}
 
 .time {
+  font-size: 0.9rem;
   color: var(--text-gray);
-  text-align: center;
+  text-align: right;
+  margin-top: auto;
+  padding-top: 0.5rem;
 }

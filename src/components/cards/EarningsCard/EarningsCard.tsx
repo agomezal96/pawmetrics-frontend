@@ -8,7 +8,6 @@ interface EarningsCardProps {
 export default function EarningsCard({ earnings }: EarningsCardProps) {
   return (
     <article className={`card ${styles['earning-card']}`}>
-      <h2 className="card-title">Earnings Summary</h2>
       <section className={styles['box-content']}>
         <div className={styles['earning-box']}>
           <h3>Current</h3>

@@ -8,28 +8,33 @@ interface CurrentBookingProps {
 
 export default function CurrentBooking({ booking }: CurrentBookingProps) {
   return (
-    <section className={styles['booking-info']}>
+    <article className={`card ${styles['booking-row']}`}>
+      {/* Group 1: Pet */}
       <div className={styles['pet-data']}>
-        <span>
-          {booking.pet_species === 'Dog' ? (
-            <Dog size={24} />
-          ) : (
-            <Cat size={24} />
-          )}
-        </span>
-        <p className={styles['pet-name']}>{booking.pet_name}</p>
-        <p className={styles.breed}>Breed</p>
+        <div className='icon-wrapper'>
+          {booking.pet_species === 'Dog' ? <Dog size={24} /> : <Cat size={24} />}
+        </div>
+        <div className={styles['pet-text']}>
+          <p className={styles['pet-name']}>{booking.pet_name}</p>
+          <p className={styles.breed}>Breed</p>
+        </div>
       </div>
 
-      <div>
+      {/* Group 2: Service */}
+      <div className={styles['service-info']}>
         <p className={styles.service}>{booking.service}</p>
       </div>
 
-      <div>
+      {/* Group 3: Date */}
+      <div className={styles['date-info']}>
         <p className={styles['booking-end']}>Until {booking.end_date}</p>
       </div>
 
-      <div className={styles['requester-name']}>{booking.requester_name}</div>
-    </section>
+      {/* Group 4: Owner */}
+      <div className={styles['requester-info']}>
+        <p className={styles['requester-label']}>Owner</p>
+        <p className={styles['requester-name']}>{booking.requester_name}</p>
+      </div>
+    </article>
   );
 }

@@ -1,6 +1,8 @@
 /* RESET */
 /* 1. Use a more-intuitive box-sizing model */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -24,18 +26,31 @@ body {
 }
 
 /* 6. Improve media defaults */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 
 /* 7. Inherit fonts for form controls */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
 /* 8. Avoid text overflows */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 
@@ -43,14 +58,20 @@ p, h1, h2, h3, h4, h5, h6 {
 p {
   text-wrap: pretty;
 }
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-wrap: balance;
 }
 
 /*
   10. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
 }
 
@@ -59,6 +80,7 @@ h1, h2, h3, h4, h5, h6 {
 :root {
   --text-black: rgb(31, 33, 36);
   --text-gray: rgb(98, 104, 110);
+  --subtle-gray: rgb(226, 225, 225);
   --accent: rgb(46, 103, 209);
   --brand: rgb(0, 189, 112);
   --success: rgb(22, 154, 91);
@@ -68,7 +90,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 @font-face {
-  font-family: 'Bogart'; 
+  font-family: 'Bogart';
   src: url('./assets/bogart-semibold-trial.woff2') format('woff2');
   font-weight: 600;
   font-style: normal;
@@ -76,7 +98,18 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    'Segoe UI',
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    'Open Sans',
+    'Helvetica Neue',
+    sans-serif;
   color: var(--text-black);
   background-color: var(--soft-white);
 }
@@ -85,18 +118,35 @@ body {
   padding: 1rem;
   background-color: var(--pure-white);
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05); /* Un toque suave */
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-
+  transition: transform 0.2s ease;
 }
 
-.card-title {
-    font-variant: small-caps;
-    letter-spacing: 0.03em;
-    color: var(--text-gray);
-    font-size: 0.875rem;
-    margin-bottom: 0.5rem;
-    font-weight: 700;
+.card:hover {
+  transform: translateY(-4px); /* Efecto interactivo sutil */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.icon-wrapper {
+/* Dimensiones fijas */
+  width: 48px;
+  height: 48px;
+  
+  /* Círculo perfecto */
+  border-radius: 50%;
+  
+  /* Centrado del icono interior */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* ¡LA CLAVE! Evita que se deforme si el padre lo estira */
+  flex-shrink: 0; 
+  
+  /* Estética Rover */
+  background-color: #f0f7f0;
+  color: var(--accent);
 }
