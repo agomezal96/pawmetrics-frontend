@@ -82,7 +82,9 @@ h6 {
   --text-gray: rgb(98, 104, 110);
   --subtle-gray: rgb(226, 225, 225);
   --accent: rgb(46, 103, 209);
+  --error: rgb(153 27 27);
   --soft-blue:rgb(235, 241, 252);
+  --soft-red: rgb(254 242 242);
   --brand: rgb(0, 189, 112);
   --success: rgb(22, 154, 91);
   --soft-white: rgb(244, 245, 246);
