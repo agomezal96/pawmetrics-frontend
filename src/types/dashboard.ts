@@ -1,6 +1,15 @@
 import type { Booking } from "./booking";
 import type { Review } from "./reviews";
 
+export type DashboardPeriod = 
+  | 'all_time' 
+  | 'this_year' 
+  | 'last_month' 
+  | '3_months' 
+  | '6_months' 
+  | '12_months' 
+  | 'last_year';
+
 export interface PetStats {
   total_dogs: number;
   total_cats: number;
@@ -13,12 +22,14 @@ export interface EarningsStats {
 }
 
 export interface BookingStats {
+  past_bookings: Booking[];
   current_bookings: Booking[];
   future_bookings: Booking[];
 }
 
 export interface ReviewStats {
-  latest_reviews: Review[]; 
+  latest_reviews: Review[];
+  total_reviews: number;
 }
 
 export interface DashboardMetrics {
