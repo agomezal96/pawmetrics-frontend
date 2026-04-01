@@ -18,7 +18,7 @@ import PastBookingsModule from '../modules/PastBookingsModule';
 
 export default function Dashboard() {
   const baseUrl = import.meta.env.VITE_API_METRICS_URL;
-  const [period, setPeriod] = useState<DashboardPeriod>('this_year');
+  const [period, setPeriod] = useState<DashboardPeriod>('this_month');
   const queryParams = useMemo(
     () => ({ period }), // The object I want that react remembers
     [period], //only change it if the variable 'period' changes.
@@ -42,7 +42,7 @@ export default function Dashboard() {
   const { bookings, earnings, pets, reviews } = metrics;
 
   // If the period is NOT 'this_year' or 'all_time', we consider it to be a history search.
-  const isHistoryMode = period !== 'this_year' && period !== 'all_time';
+  const isHistoryMode = !['this_year', 'all_time', 'this_month'].includes(period);
 
   return (
     <div className={styles['dashboard-container']}>
