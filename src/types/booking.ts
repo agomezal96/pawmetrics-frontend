@@ -10,8 +10,9 @@ export interface Booking {
   end_date: string;      // It comes as ISO String
   price: string;         // Django sends it as a String "160.00"
   created_at: string;
-  pet: number;           
+  pet: number;
   pet_name: string;
   pet_species: PetSpeciesType;
+  pet_breed: string;           
   requester_name: string;
 }

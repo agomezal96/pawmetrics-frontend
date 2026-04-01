@@ -2,6 +2,7 @@ import { Cat, Dog } from 'phosphor-react';
 import type { Booking } from '../../../types/booking';
 import styles from './FutureBookingCard.module.css';
 import { formatRelativeDate } from '../../../utils/date-formatter';
+import { capitalize } from '../../../utils/capitalize';
 
 interface FutureBookingProps {
   booking: Booking;
@@ -23,7 +24,7 @@ export default function FutureBookingCard({ booking }: FutureBookingProps) {
 
           <div className={styles['pet-details']}>
             <p className={styles['pet-name']}>{booking.pet_name}</p>
-            <p className={styles['service']}>{booking.service}</p>
+            <p className={styles['service']}>{capitalize(booking.service)}</p>
           </div>
         </div>
       </div>

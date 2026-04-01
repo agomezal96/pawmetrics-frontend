@@ -5,6 +5,7 @@ import {
   formatDateEnglish,
   getTimeRemaining,
 } from '../../utils/date-formatter';
+import { capitalize } from '../../utils/capitalize';
 
 interface CurrentBookingProps {
   booking: Booking;
@@ -32,13 +33,13 @@ export default function BookingRow({ booking, type }: CurrentBookingProps) {
         </div>
         <div className={styles['pet-text']}>
           <p className={styles['pet-name']}>{booking.pet_name}</p>
-          <p className={styles.breed}>Breed</p>
+          <p className={styles.breed}>{booking.pet_breed}</p>
         </div>
       </div>
 
       {/* Group 2: Service */}
       <div className={styles['service-info']}>
-        <p className={styles.service}>{booking.service}</p>
+        <p className={styles.service}>{capitalize(booking.service)}</p>
       </div>
 
       {/* Group 3: Date */}
