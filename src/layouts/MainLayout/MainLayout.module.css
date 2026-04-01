@@ -1,5 +1,9 @@
 .main-layout {
-    display: grid;
-    grid-template-rows: auto 1fr;
-    min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  min-height: 100vh;
+  background-image: url('../../assets/images/background-grass.svg');
+  background-position: bottom;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
