@@ -1,6 +1,6 @@
-import styles from './CurrentBookingHeader.module.css';
+import styles from './BookingTableHeader.module.css';
 
-export default function CurrentBookingHeader() {
+export default function BookingTableHeader() {
   return (
     <header className={styles['header-container']}>
       <span>Pet</span>

@@ -14,6 +14,7 @@ import LoadingDashboard from '../LoadingDashboard';
 import ErrorDashboard from '../ErrorDashboard/ErrorDashboard';
 import { useMemo, useState } from 'react';
 import PeriodSelector from '../PeriodSelector';
+import PastBookingsModule from '../modules/PastBookingsModule';
 
 export default function Dashboard() {
   const baseUrl = import.meta.env.VITE_API_METRICS_URL;
@@ -23,7 +24,7 @@ export default function Dashboard() {
     [period], //only change it if the variable 'period' changes.
   );
 
-  function handlePeriodChange(period) {
+  function handlePeriodChange(period: DashboardPeriod) {
     setPeriod(period);
   }
 
@@ -40,6 +41,9 @@ export default function Dashboard() {
 
   const { bookings, earnings, pets, reviews } = metrics;
 
+  // If the period is NOT 'this_year' or 'all_time', we consider it to be a history search.
+  const isHistoryMode = period !== 'this_year' && period !== 'all_time';
+
   return (
     <div className={styles['dashboard-container']}>
       <div className={styles['title-and-selector']}>
@@ -55,7 +59,13 @@ export default function Dashboard() {
       <div className={styles['bento-grid']}>
         <EarningsModule earnings={earnings} />
         <TotalPetsModule petStats={pets} />
-        <CurrentBookingModule booking={bookings.current_bookings} />
+        {!isHistoryMode ? (
+          <>
+            <CurrentBookingModule bookings={bookings.current_bookings} />
+          </>
+        ) : (
+          <PastBookingsModule bookings={bookings.past_bookings} />
+        )}
         <FutureBookingsModule bookings={bookings.future_bookings} />
         <ReviewModule reviews={reviews.latest_reviews} />
       </div>
