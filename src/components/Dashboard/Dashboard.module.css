@@ -1,3 +1,8 @@
+.title-and-selector {
+  display: flex;
+  flex-direction: column;
+}
+
 .title-welcome {
   font-size: 2rem;
   font-weight: 700;
@@ -36,57 +41,74 @@
 
 /* --- TABLET (768px to 1023px) --- */
 @media (min-width: 768px) and (max-width: 1023px) {
+  .title-and-selector {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   .bento-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 columnas iguales */
     gap: 1.5rem;
   }
 
-  .bento-grid > section:nth-child(1) { 
-    grid-column: span 2; 
+  .bento-grid > section:nth-child(1) {
+    grid-column: span 2;
   }
 
-  .bento-grid > section:nth-child(2) { 
-    grid-column: span 2; 
+  .bento-grid > section:nth-child(2) {
+    grid-column: span 2;
   }
 
-  .bento-grid > section:nth-child(3) { 
-    grid-column: span 2; 
+  .bento-grid > section:nth-child(3) {
+    grid-column: span 2;
   }
 
-  .bento-grid > section:nth-child(4) { 
-    grid-column: span 1; 
+  .bento-grid > section:nth-child(4) {
+    grid-column: span 1;
   }
 
-  .bento-grid > section:nth-child(5) { 
-    grid-column: span 1; 
+  .bento-grid > section:nth-child(5) {
+    grid-column: span 1;
   }
 }
 /* Desktop: */
 @media (min-width: 1024px) {
+  .title-and-selector {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
   .dashboard-container {
     padding: 2rem;
   }
   .bento-grid {
     grid-template-columns: repeat(4, 1fr);
-grid-auto-rows: auto;
+    grid-auto-rows: auto;
     gap: 1.5rem;
   }
 
   .bento-grid > section {
     display: flex;
     flex-direction: column;
-    height: 100% !important;
+    height: 100%;
   }
 
-  .bento-grid > section:nth-child(1) { grid-column: span 2; } /* Earnings */
-  .bento-grid > section:nth-child(2) { grid-column: span 2; } /* Pet Stats */
-  
-  .bento-grid > section:nth-child(3) { 
-    grid-column: span 3; 
-    grid-row: span 2; 
-  } 
-  
-  .bento-grid > section:nth-child(4) { grid-column: span 1; } /* Future */
-  .bento-grid > section:nth-child(5) { grid-column: span 4; } /* Reviews */
+  .bento-grid > section:nth-child(1) {
+    grid-column: span 2;
+  } /* Earnings */
+  .bento-grid > section:nth-child(2) {
+    grid-column: span 2;
+  } /* Pet Stats */
+
+  .bento-grid > section:nth-child(3) {
+    grid-column: span 3;
+  }
+
+  .bento-grid > section:nth-child(4) {
+    grid-column: span 1;
+  } /* Future */
+  .bento-grid > section:nth-child(5) {
+    grid-column: span 4;
+  } /* Reviews */
 }
