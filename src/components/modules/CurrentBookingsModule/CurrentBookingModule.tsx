@@ -4,21 +4,21 @@ import BookingTableHeader from '../../BookingTableHeader';
 import BookingRow from '../../BookingTableRow';
 
 interface CurrentBookingProps {
-  booking: Booking[];
+  bookings: Booking[];
 }
 
-export default function CurrentBookingModule({ booking }: CurrentBookingProps) {
+export default function CurrentBookingModule({ bookings }: CurrentBookingProps) {
   return (
     <>
       <DashboardSection sectionTitle="Current Bookings" isList={true}>
-        {booking.length === 0 ? (
+        {bookings.length === 0 ? (
           <div className="empty-container">
             <p className="empty-text">No active bookings right now.</p>
           </div>
         ) : (
           <>
             <BookingTableHeader />
-            {booking.map((booking) => (
+            {bookings.map((booking) => (
               <BookingRow key={booking.id} booking={booking} type='current'/>
             ))}
           </>
