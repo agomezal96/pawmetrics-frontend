@@ -23,7 +23,7 @@ export default function Dashboard() {
     [period], //only change it if the variable 'period' changes.
   );
 
-  function handlePeriodChange(period) {
+  function handlePeriodChange(period: DashboardPeriod) {
     setPeriod(period);
   }
 
@@ -55,7 +55,7 @@ export default function Dashboard() {
       <div className={styles['bento-grid']}>
         <EarningsModule earnings={earnings} />
         <TotalPetsModule petStats={pets} />
-        <CurrentBookingModule booking={bookings.current_bookings} />
+        <CurrentBookingModule bookings={bookings.current_bookings} />
         <FutureBookingsModule bookings={bookings.future_bookings} />
         <ReviewModule reviews={reviews.latest_reviews} />
       </div>
