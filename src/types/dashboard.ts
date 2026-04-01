@@ -1,13 +1,14 @@
-import type { Booking } from "./booking";
-import type { Review } from "./reviews";
+import type { Booking } from './booking';
+import type { Review } from './reviews';
 
-export type DashboardPeriod = 
-  | 'all_time' 
-  | 'this_year' 
-  | 'last_month' 
-  | '3_months' 
-  | '6_months' 
-  | '12_months' 
+export type DashboardPeriod =
+  | 'this_month'
+  | 'all_time'
+  | 'this_year'
+  | 'last_month'
+  | '3_months'
+  | '6_months'
+  | '12_months'
   | 'last_year';
 
 export interface PetStats {
