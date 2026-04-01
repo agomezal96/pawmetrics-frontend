@@ -1,6 +1,6 @@
 import type { Booking } from '../../../types/booking';
 import BookingTableHeader from '../../BookingTableHeader';
-import BookingRow from '../../BookingTableRow';
+import BookingRow from '../../BookingRow';
 import DashboardSection from '../../DashboardSection';
 
 interface PastBookingsModuleProps {
@@ -12,7 +12,7 @@ export default function PastBookingsModule({
 }: PastBookingsModuleProps) {
   return (
     <>
-      <DashboardSection sectionTitle="Current Bookings" isList={true}>
+      <DashboardSection sectionTitle="Past Bookings" isList={true}>
         {bookings.length === 0 ? (
           <div className="empty-container">
             <p className="empty-text">No history found for this period.</p>
