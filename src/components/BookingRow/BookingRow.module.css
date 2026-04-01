@@ -5,6 +5,7 @@
   gap: 1rem;
   padding: 1.5rem;
   text-align: center;
+  border-bottom: 2px solid var(--soft-white);
 }
 
 .pet-data {
@@ -21,8 +22,7 @@
 }
 
 .breed,
-.service,
-.requester-label {
+.service {
   color: var(--text-gray);
   font-size: 0.85rem;
   margin: 0;
@@ -31,77 +31,41 @@
 .booking-end {
   color: var(--accent);
   font-weight: 600;
-  background: var(--soft-blue); 
-  padding: 4px 12px;
   border-radius: 20px;
 }
 
-.requester-name {
-  font-weight: 600;
-}
 
-.requester-label {
-  display: block; /* Solo visible en mobile para dar contexto */
+
+.price {
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 /* --- TABLET / DESKTOP (Layout de Fila) --- */
 @media (min-width: 768px) {
   .booking-row {
-    border-radius: 0; /* Quitamos redondeado para que parezcan filas pegadas */
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    border-radius: 0;
     border: none;
     border-bottom: 1px solid var(--pure-white);
-    box-shadow: none; /* Quitamos sombra individual */
+    box-shadow: none;
+    text-align: start;
+    gap: 1.5em;
   }
 
   .pet-data {
-    flex-direction: row; /* Icono al lado del nombre */
-    flex: 2; /* Más espacio para la info principal */
+    flex-direction: row;
+    justify-content: start;
   }
 
   .pet-text {
     display: flex;
     flex-direction: column;
-  }
-
-  .service-info,
-  .date-info,
-  .requester-info {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
   }
 
   .requester-label {
     display: none; /* En desktop no hace falta el label "Owner" si están alineados */
-  }
-}
-
-/* ... (tus estilos de mobile se quedan igual) ... */
-
-@media (min-width: 768px) {
-  .booking-row {
-    display: grid !important; /* Cambiamos flex por grid */
-    grid-template-columns: 2fr 1fr 1fr 1fr; /* Exactamente igual al header */
-    gap: 1rem;
-    align-items: center;
-    text-align: left;
-    padding: 1rem 2rem;
-    width: 100%;
-  }
-
-  .pet-data {
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 1rem;
-  }
-
-  /* Centramos el contenido de las columnas intermedias para que respiren */
-  .service-info,
-  .date-info,
-  .requester-info {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
   }
 }

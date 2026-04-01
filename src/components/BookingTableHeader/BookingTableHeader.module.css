@@ -2,14 +2,14 @@
   display: none; /* Hidden in mobile */
   padding: 0.5rem 2rem;
   margin-bottom: 0.5rem;
+  border-bottom: var(--text-gray);
 }
 
 @media (min-width: 768px) {
   .header-container {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr; /* Same structure than in the rows: 2 parts for pet and 1 for the rest */
-    gap: 1rem;
-    align-items: center;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
   }
 
   .header-container span {

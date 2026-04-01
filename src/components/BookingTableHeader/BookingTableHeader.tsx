@@ -7,6 +7,7 @@ export default function BookingTableHeader() {
       <span>Service</span>
       <span>End Date</span>
       <span>Owner</span>
+      <span>Revenue</span>
     </header>
   );
 }

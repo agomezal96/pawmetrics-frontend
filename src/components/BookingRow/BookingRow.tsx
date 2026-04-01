@@ -49,8 +49,12 @@ export default function BookingRow({ booking, type }: CurrentBookingProps) {
 
       {/* Group 4: Owner */}
       <div className={styles['requester-info']}>
-        <p className={styles['requester-label']}>Owner</p>
         <p className={styles['requester-name']}>{booking.requester_name}</p>
+      </div>
+
+      {/* Group 5: Price */}
+      <div className={styles['price-info']}>
+        <p className={styles['price']}>{booking.price}$</p>
       </div>
     </article>
   );
