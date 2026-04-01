@@ -1,4 +1,4 @@
-import styles from './CurrentBooking.module.css';
+import styles from './BookingRow.module.css';
 import type { Booking } from '../../types/booking';
 import { Cat, Dog } from 'phosphor-react';
 import {

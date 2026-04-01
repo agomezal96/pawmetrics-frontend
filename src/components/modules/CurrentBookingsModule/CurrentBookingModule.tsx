@@ -1,7 +1,7 @@
 import type { Booking } from '../../../types/booking';
 import DashboardSection from '../../DashboardSection';
 import BookingTableHeader from '../../BookingTableHeader';
-import BookingRow from '../../BookingTableRow';
+import BookingRow from '../../BookingRow';
 
 interface CurrentBookingProps {
   bookings: Booking[];
