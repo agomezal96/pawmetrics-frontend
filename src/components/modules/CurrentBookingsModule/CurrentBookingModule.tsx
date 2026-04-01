@@ -1,7 +1,7 @@
 import type { Booking } from '../../../types/booking';
 import CurrentBooking from '../../CurrentBooking';
-import CurrentBookingHeader from '../../CurrentBookingHeader';
 import DashboardSection from '../../DashboardSection';
+import BookingTableHeader from '../../BookingTableHeader';
 
 interface CurrentBookingProps {
   booking: Booking[];
@@ -17,7 +17,7 @@ export default function CurrentBookingModule({ booking }: CurrentBookingProps) {
           </div>
         ) : (
           <>
-            <CurrentBookingHeader />
+            <BookingTableHeader />
             {booking.map((booking) => (
               <CurrentBooking key={booking.id} booking={booking} />
             ))}
