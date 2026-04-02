@@ -13,13 +13,14 @@ export default function SitterCard({ globalScore }: SitterCardProps) {
       <div className={styles['avatar-container']}>
         <img src={avatar} alt="Sitter avatar image" />
       </div>
-      <p className={styles['sitter-name']}>Andrea Gomez</p>
-
-      <div className={styles.score}>
-        <Star size={24} weight="fill" color="var(--star-color)" />
-        <p className={styles['star-average']}>
-          {globalScore.average_rating} • {globalScore.total_reviews} reviews
-        </p>
+      <div className={styles['name-and-reviews']}>
+        <p className={styles['sitter-name']}>Andrea Gomez</p>
+        <div className={styles.score}>
+          <Star size={24} weight="fill" color="var(--star-color)" />
+          <p className={styles['star-average']}>
+            {globalScore.average_rating} • {globalScore.total_reviews} reviews
+          </p>
+        </div>
       </div>
     </article>
   );

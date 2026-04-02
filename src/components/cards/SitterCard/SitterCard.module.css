@@ -10,8 +10,8 @@
 }
 
 .avatar-container {
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   overflow: hidden;
   border: 2px solid var(--brand);
   border-radius: 100%;
@@ -25,7 +25,14 @@
 }
 
 .star-average {
-  font-size: 1.3rem;
+  font-size: 1rem;
+}
+
+.name-and-reviews {
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
 }
 
 
