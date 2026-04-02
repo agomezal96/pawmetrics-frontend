@@ -5,7 +5,7 @@ interface SitterRatingCardProps {
   starSitterProgress: StarSitterProgress;
 }
 
-export default function SitterRatingCard({
+export default function SitterScoreCard({
   starSitterProgress,
 }: SitterRatingCardProps) {
   const {
