@@ -1,4 +1,3 @@
-import { Cat, Dog } from 'phosphor-react';
 import styles from './PetNumberCard.module.css';
 import type { ReactNode } from 'react';
 
