@@ -6,6 +6,6 @@ type ServiceType =
   | 'Doggy Day Care'
   | 'Dog Walking';
 
-type PetSpeciesType = 'Cat' | 'Dog'
+type PetSpeciesType = 'cat' | 'dog'
 
 export type { ServiceType, PetSpeciesType };

@@ -25,7 +25,7 @@ export default function BookingRow({ booking, type }: CurrentBookingProps) {
       {/* Group 1: Pet */}
       <div className={styles['pet-data']}>
         <div className="icon-wrapper">
-          {booking.pet_species === 'Dog' ? (
+          {booking.pet_species === 'dog' ? (
             <Dog size={24} />
           ) : (
             <Cat size={24} />
