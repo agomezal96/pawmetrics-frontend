@@ -1,6 +1,7 @@
 import MainLayout from './layouts/MainLayout';
 import Header from './components/Header';
 import Dashboard from './components/Dashboard';
+import Footer from './components/Footer/Footer';
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <MainLayout>
         <Header />
         <Dashboard />
+        <Footer />
       </MainLayout>
     </>
   );
