@@ -91,6 +91,7 @@ h6 {
   --soft-white: rgb(244, 245, 246);
   --pure-white: rgb(255, 255, 255);
   --font-title: 'Bogart', serif;
+  --star-color: rgb(248 184 21);
 }
 
 @font-face {
