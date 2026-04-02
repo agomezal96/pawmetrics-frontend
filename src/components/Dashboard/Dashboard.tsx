@@ -53,9 +53,9 @@ export default function Dashboard() {
           onPeriodChange={handlePeriodChange}
         />
       </div>
-      <p className={styles['p-welcome']}>
+      {/* <p className={styles['p-welcome']}>
         Your stats for {period.replace('_', ' ')}
-      </p>
+      </p> */}
       <div className={styles['bento-grid']}>
         <EarningsModule earnings={earnings} />
         <TotalPetsModule petStats={pets} />
