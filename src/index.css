@@ -121,6 +121,8 @@ body {
 .card {
   padding: 1rem;
   background-color: var(--pure-white);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   display: flex;
@@ -142,7 +144,7 @@ body {
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  background-color:var(--soft-green);
+  background-color: var(--soft-green);
   color: var(--brand);
 }
 

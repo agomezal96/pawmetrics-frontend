@@ -21,11 +21,14 @@
   margin: 0;
 }
 
-.breed,
-.service {
+.breed {
   color: var(--text-gray);
   font-size: 0.85rem;
   margin: 0;
+}
+
+.service {
+  font-size: 1rem;
 }
 
 .booking-end {

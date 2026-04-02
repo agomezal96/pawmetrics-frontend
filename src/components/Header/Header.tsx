@@ -1,12 +1,12 @@
 import './Header.css';
-import { User } from 'phosphor-react';
+import { PawPrint, User } from 'phosphor-react';
 
 export default function Header() {
   return (
     <header>
       <nav className="box">
         <div className="logo-container">
-          <span className="logo">Pawmetrics</span>
+          <span className="logo"><PawPrint color="var(--brand)" weight='fill' size={46}/></span>
         </div>
         
         <div className="user-section">

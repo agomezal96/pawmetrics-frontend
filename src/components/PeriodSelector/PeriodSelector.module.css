@@ -11,7 +11,7 @@
 }
 
 .label {
-  font-size: 0.85rem;
+  font-size: 1rem;
   color: var(--text-gray);
   font-weight: 500;
 }
@@ -19,7 +19,7 @@
 .select-input {
   border: none;
   background: transparent;
-  font-size: 0.9rem;
+  font-size: 1.2rem;
   font-weight: 600;
   color: var(--accent);
   cursor: pointer;
