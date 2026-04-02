@@ -1,0 +1,15 @@
+.footer {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+}
+
+.link {
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 600;
+}
