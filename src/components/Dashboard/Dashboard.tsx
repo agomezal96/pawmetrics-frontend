@@ -17,7 +17,7 @@ import { useMemo, useState } from 'react';
 import PeriodSelector from '../PeriodSelector';
 import PastBookingsModule from '../modules/PastBookingsModule';
 import SitterCard from '../cards/SitterCard';
-import SitterRatingCard from '../cards/SitterScoreCard';
+import SitterScoreCardModule from '../modules/SitterScoreCardModule';
 
 export default function Dashboard() {
   const baseUrl = import.meta.env.VITE_API_METRICS_URL;
@@ -72,7 +72,7 @@ export default function Dashboard() {
       </p> */}
       <div className={styles['bento-grid']}>
         <SitterCard globalScore={global_score}/>
-        <SitterRatingCard starSitterProgress={star_sitter_progress}/>
+        <SitterScoreCardModule starSitterProgress={star_sitter_progress}/>
         <EarningsModule earnings={earnings} />
         <TotalPetsModule petStats={pets} />
         {!isHistoryMode ? (
