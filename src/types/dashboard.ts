@@ -39,3 +39,22 @@ export interface DashboardMetrics {
   bookings: BookingStats;
   reviews: ReviewStats;
 }
+
+export interface StarSitterProgress {
+  unique_owners: number;
+  unique_owners_target: number;
+  repeat_owners: number;
+  repeat_owners_target: number;
+  current_rating_6m: number;
+  rating_target: number;
+}
+
+export interface GlobalSitterScore {
+  total_reviews: number;
+  average_rating: number;
+}
+
+export interface SitterScores {
+  star_sitter_progress: StarSitterProgress;
+  global_score: GlobalSitterScore;
+}
