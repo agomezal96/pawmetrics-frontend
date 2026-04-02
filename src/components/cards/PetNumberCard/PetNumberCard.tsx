@@ -1,3 +1,4 @@
+import { Cat, Dog } from 'phosphor-react';
 import styles from './PetNumberCard.module.css';
 import type { ReactNode } from 'react';
 
@@ -13,13 +14,12 @@ export default function PetNumberCard({
   label,
 }: petNumberCardProps) {
   return (
-    <article className={`card ${styles['pet-number-card']}`}>
-      <div className='icon-wrapper'>
-      {icon}
-
+    <article className={styles['pet-number-card']}>
+      <div className={styles['icon-and-label']}>
+        <div className="icon-wrapper">{icon}</div>
+        <p className={styles['label-text']}>{label}</p>
       </div>
       <p className={styles['number-of-pets']}>{numberOfPets}</p>
-      <p className={styles['label-text']}>{label}</p>
     </article>
   );
 }
