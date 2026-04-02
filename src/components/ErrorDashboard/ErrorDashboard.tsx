@@ -1,3 +1,4 @@
+import Button from '../Button';
 import styles from './ErrorDashboard.module.css';
 
 interface ErrorDashboardProps {
@@ -14,10 +15,7 @@ export default function ErrorDashboard({ message }: ErrorDashboardProps) {
       <h2 className={styles['error-title']}>Oops! Something went wrong</h2>
 
       {message && <p className={styles['error-message']}>{message}</p>}
-
-      <button className={styles['retry-button']} onClick={handleRetry}>
-        Try again
-      </button>
+      <Button onClick={handleRetry}>Try again</Button>
 
       <span className={styles['error-footer']}>
         If the problem persists, please contact support.
