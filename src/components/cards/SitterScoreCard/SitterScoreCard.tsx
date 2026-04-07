@@ -1,4 +1,5 @@
 import type { StarSitterProgress } from '../../../types/dashboard';
+import { MetricCircle } from '../../atoms/MetricsCircle/MetricsCircle';
 import styles from './SitterScoreCard.module.css';
 
 interface SitterRatingCardProps {
@@ -21,14 +22,22 @@ export default function SitterScoreCard({
     rating_target,
   } = starSitterProgress;
 
-  const criteria = [
-    unique_owners >= unique_owners_target,
-    repeat_owners >= repeat_owners_target,
-    current_rating_6m >= rating_target,
+  const metrics = [
+    {
+      label: 'Unique Owners',
+      current: unique_owners,
+      target: unique_owners_target,
+    },
+    {
+      label: 'Repeat Owners',
+      current: repeat_owners,
+      target: repeat_owners_target,
+    },
+    { label: 'Rating', current: current_rating_6m, target: rating_target },
   ];
 
-  const completedSteps = criteria.filter((item) => Boolean(item)).length;
-  const progressPercentage = (completedSteps / criteria.length) * 100;
+  const completedSteps = metrics.filter((m) => m.current >= m.target).length;
+  const progressPercentage = (completedSteps / metrics.length) * 100;
 
   return (
     <article className={`card`}>
@@ -44,35 +53,9 @@ export default function SitterScoreCard({
             few happy paws away from the badge! 🐾✨
           </p>
           <div className={styles['metrics-container']}>
-            {/* Unique Owners */}
-            <div className={styles.metric}>
-              <div
-                className={`${styles.circle} ${criteria[0] ? styles.active : ''}`}
-              >
-                {unique_owners}/{unique_owners_target}
-              </div>
-              <p>Unique Owners</p>
-            </div>
-
-            {/* Repeat Owners */}
-            <div className={styles.metric}>
-              <div
-                className={`${styles.circle} ${criteria[1] ? styles.active : ''}`}
-              >
-                {repeat_owners}/{repeat_owners_target}
-              </div>
-              <p>Repeat Owners</p>
-            </div>
-
-            {/* Rating */}
-            <div className={styles.metric}>
-              <div
-                className={`${styles.circle} ${criteria[2] ? styles.active : ''}`}
-              >
-                {current_rating_6m}/{rating_target}
-              </div>
-              <p>Rating</p>
-            </div>
+            {metrics.map((metric) => (
+              <MetricCircle key={metric.label} {...metric} />
+            ))}
           </div>
           <div className={styles.footer}>
             <div className={styles['progress-bar-bg']}>

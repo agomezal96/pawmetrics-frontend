@@ -12,43 +12,6 @@
   padding: 1rem;
 }
 
-.metric {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  text-align: center;
-  flex: 1;
-}
-
-.circle {
-  width: 64px;
-  height: 64px;
-  border: 2px solid #edf2f7;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-weight: 700;
-  font-size: 0.95rem;
-  color: #a0aec0;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.circle.active {
-  border-color: var(--brand);
-  color: var(--success);
-  transform: scale(1.05);
-}
-
-.metric p {
-  font-size: 0.75rem;
-  color: var(--text-gray);
-  margin: 0;
-  font-weight: 600;
-  line-height: 1.2;
-}
-
 .footer {
   display: flex;
   align-items: center;
