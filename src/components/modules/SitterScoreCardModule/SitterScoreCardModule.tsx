@@ -4,15 +4,17 @@ import DashboardSection from '../../DashboardSection';
 
 interface SitterScoreCardProps {
   starSitterProgress: StarSitterProgress;
+  isLoading: boolean;
+  error: string | null;
 }
 
 export default function SitterScoreCardModule({
-  starSitterProgress,
+  starSitterProgress, isLoading, error
 }: SitterScoreCardProps) {
   return (
     <>
       <DashboardSection sectionTitle="Progress to Star Sitter">
-        <SitterScoreCard starSitterProgress={starSitterProgress} />
+        <SitterScoreCard starSitterProgress={starSitterProgress} isLoading={isLoading} error={error}/>
       </DashboardSection>
     </>
   );
