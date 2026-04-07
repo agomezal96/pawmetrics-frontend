@@ -31,3 +31,9 @@
   text-transform: capitalize;
   margin: 0;
 }
+
+@media (min-width: 1024px) {
+  .pet-number-card {
+    padding: 0;
+  }
+ }

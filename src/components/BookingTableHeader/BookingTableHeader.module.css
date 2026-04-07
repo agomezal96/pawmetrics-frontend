@@ -1,7 +1,6 @@
 .header-container {
   display: none; /* Hidden in mobile */
   padding: 0.5rem 2rem;
-  margin-bottom: 0.5rem;
   border-bottom: var(--text-gray);
 }
 
@@ -10,6 +9,7 @@
     display: grid;
     grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
     gap: 1.5rem;
+    border-bottom: 1px solid var(--subtle-gray);
   }
 
   .header-container span {

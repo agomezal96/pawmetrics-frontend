@@ -5,9 +5,9 @@
   justify-content: space-between;
   padding: 1.5rem;
   background-color: white;
-  border-radius: 16px;
   height: 100%; /* To fill the grid slot */
   box-sizing: border-box;
+  width: 100%;
 }
 
 .box-content {
@@ -17,7 +17,6 @@
   flex-wrap: nowrap;
   align-items: flex-start;
   flex-grow: 1;
-  padding: 1rem 0;
 }
 
 .earning-box {
@@ -41,6 +40,7 @@
 .current-earnings {
   color: var(--success);
   font-size: 2.5rem;
+  font-weight: 600;
 }
 
 .earning-card h3 {
@@ -50,7 +50,7 @@
 .pending-earnings {
   color: var(--text-gray);
   font-size: 1.8rem;
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .current-earnings,
