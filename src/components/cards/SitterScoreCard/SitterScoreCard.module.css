@@ -1,8 +1,15 @@
+.description {
+  color: var(--text-gray);
+  font-size: 1rem;
+  display: none;
+}
+
 .metrics-container {
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   gap: 12px;
+  padding: 1rem;
 }
 
 .metric {
@@ -66,4 +73,10 @@
 .progressText {
   font-size: 0.9rem;
   font-weight: 800;
+}
+
+@media (min-width: 768px) {
+  .description {
+    display: block;
+  }
 }

@@ -120,7 +120,7 @@ body {
 }
 
 .card {
-  padding: 1rem;
+  padding: 1.5rem;
   background-color: var(--pure-white);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);

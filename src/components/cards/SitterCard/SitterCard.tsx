@@ -21,6 +21,7 @@ export default function SitterCard({ globalScore }: SitterCardProps) {
             {globalScore.average_rating} • {globalScore.total_reviews} reviews
           </p>
         </div>
+        <p>Barcelona</p>
       </div>
     </article>
   );

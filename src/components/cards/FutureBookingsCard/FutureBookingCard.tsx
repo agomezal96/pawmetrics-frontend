@@ -10,12 +10,12 @@ interface FutureBookingProps {
 
 export default function FutureBookingCard({ booking }: FutureBookingProps) {
   return (
-    <article className="card">
+    <article className={`card ${styles['future-booking-card']}`}>
       <p className={styles.date}>{formatRelativeDate(booking.start_date)}</p>
       <div className={styles['future-booking-content']}>
         <div className={styles['icon-and-name']}>
           <div className="icon-wrapper">
-            {booking.pet_species === 'Dog' ? (
+            {booking.pet_species === "dog" ? (
               <Dog size={26} />
             ) : (
               <Cat size={26} />

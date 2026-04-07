@@ -28,6 +28,12 @@ export default function SitterScoreCard({
 
   return (
     <article className={`card`}>
+      <p className={styles.description}>
+        Become a Star Sitter by hosting <strong>5 unique owners</strong>,
+        welcoming <strong>2 repeat clients</strong>, and maintaining a{' '}
+        <strong>4.9+ rating</strong> over the last 6 months. You're just a few
+        happy paws away from the badge! 🐾✨
+      </p>
       <div className={styles['metrics-container']}>
         {/* Unique Owners */}
         <div className={styles.metric}>

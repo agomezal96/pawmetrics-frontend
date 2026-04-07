@@ -1,7 +1,7 @@
 .sitter-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .sitter-name {
@@ -31,14 +31,24 @@
 .name-and-reviews {
   display: flex;
   flex-direction: row;
-  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
   align-items: center;
+  width: 100%;
+  text-align: left;
 }
-
 
 @media (min-width: 768px) {
-.sitter-card {
+  .sitter-card {
     align-items: start;
-}
+  }
 
+  .name-and-reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: start;
+
+  }
 }

@@ -51,7 +51,7 @@ export default function Dashboard() {
   if (!sitterScores) return null;
 
   const { bookings, earnings, pets, reviews } = metrics;
-  const { star_sitter_progress, global_score} = sitterScores;
+  const { star_sitter_progress, global_score } = sitterScores;
 
   // If the period is NOT 'this_year' or 'all_time', we consider it to be a history search.
   const isHistoryMode = !['this_year', 'all_time', 'this_month'].includes(
@@ -71,10 +71,12 @@ export default function Dashboard() {
         Your stats for {period.replace('_', ' ')}
       </p> */}
       <div className={styles['bento-grid']}>
-        <SitterCard globalScore={global_score}/>
-        <SitterScoreCardModule starSitterProgress={star_sitter_progress}/>
-        <EarningsModule earnings={earnings} />
-        <TotalPetsModule petStats={pets} />
+        <SitterCard globalScore={global_score} />
+        <SitterScoreCardModule starSitterProgress={star_sitter_progress} />
+        <div className={styles['box-with-modules']}>
+          <EarningsModule earnings={earnings} />
+          <TotalPetsModule petStats={pets} />
+        </div>
         {!isHistoryMode ? (
           <>
             <CurrentBookingModule bookings={bookings.current_bookings} />
