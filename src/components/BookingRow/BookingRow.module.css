@@ -17,9 +17,9 @@
 }
 
 .pet-name {
-  font-weight: 700;
   font-size: 1.25rem;
   margin: 0;
+  font-family: 'Fraunces', Georgia, 'Times New Roman', Times, serif;
 }
 
 .breed {
@@ -37,8 +37,6 @@
   font-weight: 600;
   border-radius: 20px;
 }
-
-
 
 .price {
   font-weight: 700;
