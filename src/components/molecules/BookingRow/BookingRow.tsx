@@ -1,12 +1,10 @@
+import type { Booking } from '../../../types/booking';
+import { capitalize } from '../../../utils/capitalize';
+import { cleanFloat } from '../../../utils/clean-float';
+import { formatDateEnglish, getTimeRemaining } from '../../../utils/date-formatter';
 import styles from './BookingRow.module.css';
-import type { Booking } from '../../types/booking';
 import { Cat, Dog } from 'phosphor-react';
-import {
-  formatDateEnglish,
-  getTimeRemaining,
-} from '../../utils/date-formatter';
-import { capitalize } from '../../utils/capitalize';
-import { cleanFloat } from '../../utils/clean-float';
+
 
 interface CurrentBookingProps {
   booking: Booking;

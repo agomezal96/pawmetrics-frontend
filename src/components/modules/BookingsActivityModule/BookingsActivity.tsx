@@ -3,7 +3,7 @@ import styles from './BookingsActivity.module.css';
 import type { Booking } from '../../../types/booking';
 import DashboardSection from '../../DashboardSection';
 import BookingTableHeader from '../../BookingTableHeader';
-import BookingRow from '../../BookingRow';
+import BookingRow from '../../molecules/BookingRow';
 
 interface Props {
   current: Booking[];
