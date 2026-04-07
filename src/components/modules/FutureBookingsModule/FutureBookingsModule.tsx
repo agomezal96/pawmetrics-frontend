@@ -9,7 +9,7 @@ interface FutureBookingProps {
 export default function FutureBookingsModule({ bookings }: FutureBookingProps) {
   return (
     <>
-      <DashboardSection sectionTitle="Future Bookings">
+      <DashboardSection sectionTitle="Future Bookings" showSeeAll={true}>
         {bookings.length === 0 ? (
           <div className="empty-container">
             <p className="empty-text">No upcoming bookings scheduled.</p>

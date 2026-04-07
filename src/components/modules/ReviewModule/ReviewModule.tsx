@@ -9,7 +9,7 @@ interface ReviewModuleProps {
 export default function ReviewModule({ reviews }: ReviewModuleProps) {
   return (
     <>
-      <DashboardSection sectionTitle="Reviews">
+      <DashboardSection sectionTitle="Reviews" showSeeAll={true}>
         {reviews.length === 0 ? (
           <div className="empty-container">
             <p className="empty-text">No reviews received.</p>

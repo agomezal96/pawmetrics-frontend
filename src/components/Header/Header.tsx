@@ -1,19 +1,19 @@
-import './Header.css';
 import { PawPrint } from 'phosphor-react';
 import avatar from '../../assets/images/avatar.png';
+import styles from './Header.module.css'
 
 export default function Header() {
   return (
-    <header>
-      <nav className="box">
-        <div className="logo-container">
-          <span className="logo">
+    <header className={styles['main-header']}>
+      <nav className={styles.box}>
+        <div className={styles['logo-container']}>
+          <span className={styles.logo}>
             <PawPrint color="var(--brand)" weight="fill" size={46} />
           </span>
         </div>
 
-        <div className="user-section">
-          <div className="avatar-container">
+        <div className={styles['user-section']}>
+          <div className={styles['avatar-container']}>
             <img src={avatar} alt="Avatar image" />
           </div>
         </div>
