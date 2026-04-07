@@ -10,7 +10,7 @@ export default function EarningsCard({ earnings }: EarningsCardProps) {
     <article className={`card ${styles['earning-card']}`}>
       <section className={styles['box-content']}>
         <div className={styles['earning-box']}>
-          <h3>Current</h3>
+          <h3>Total</h3>
           <p className={styles['current-earnings']}>
             {earnings.past_earnings}$
           </p>

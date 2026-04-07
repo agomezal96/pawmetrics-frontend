@@ -6,6 +6,7 @@ interface DashboardSectionProps {
   children: ReactNode;
   isList?: boolean;
   showSeeAll?: boolean;
+  headerElement?: ReactNode;
 }
 
 export default function DashboardSection({
@@ -13,17 +14,21 @@ export default function DashboardSection({
   children,
   isList,
   showSeeAll,
+  headerElement,
 }: DashboardSectionProps) {
   return (
     <section>
       <header className={styles['section-header']}>
-        <h2 className={styles['section-title']}>{sectionTitle}</h2>
+        {sectionTitle && (
+          <h2 className={styles['section-title']}>{sectionTitle}</h2>
+        )}
         {showSeeAll && (
           <button type="button" className={styles['view-all']}>
             View all &rarr;
           </button>
         )}
       </header>
+      <div className={styles['header-actions']}>{headerElement}</div>
       <div
         className={`${styles['cards-container']} ${isList ? styles['is-list'] : ''}`}
       >

@@ -15,7 +15,7 @@ export default function FutureBookingCard({ booking }: FutureBookingProps) {
       <div className={styles['future-booking-content']}>
         <div className={styles['icon-and-name']}>
           <div className="icon-wrapper">
-            {booking.pet_species === "dog" ? (
+            {booking.pet_species === 'dog' ? (
               <Dog size={26} />
             ) : (
               <Cat size={26} />
@@ -27,6 +27,7 @@ export default function FutureBookingCard({ booking }: FutureBookingProps) {
             <p className={styles['service']}>{capitalize(booking.service)}</p>
           </div>
         </div>
+        <p className={styles.price}>+ {booking.price}$</p>
       </div>
     </article>
   );

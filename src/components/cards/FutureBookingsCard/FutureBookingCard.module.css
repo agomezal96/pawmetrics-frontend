@@ -14,8 +14,9 @@
 
 .future-booking-content {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
   flex-grow: 1;
 }
 
@@ -43,4 +44,8 @@
   font-size: 0.9rem;
   margin: 0;
   font-weight: 500;
+}
+
+.price {
+  color: var(--text-gray);
 }
