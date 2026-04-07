@@ -37,10 +37,6 @@ header {
   border: 2px solid var(--brand);
   transition: transform 0.2s ease;
   cursor: pointer;
-
-  display: flex;
-  align-items: center; 
-  justify-content: center;
 }
 
 .avatar-container:hover {
