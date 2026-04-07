@@ -1,7 +1,6 @@
 // src/types/booking.ts
 
-import type { PetSpeciesType, ServiceType } from "./types";
-
+import type { PetSpeciesType, ServiceType } from "./Types";
 
 export interface Booking {
   id: number;
