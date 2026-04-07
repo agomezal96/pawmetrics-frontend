@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import styles from './BookingsActivity.module.css';
 import type { Booking } from '../../../types/booking';
 import DashboardSection from '../../DashboardSection';
-import BookingTableHeader from '../../BookingTableHeader';
 import BookingRow from '../../molecules/BookingRow';
+import BookingTableHeader from '../../molecules/BookingTableHeader';
 
 interface Props {
   current: Booking[];
