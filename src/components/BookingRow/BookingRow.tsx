@@ -17,7 +17,7 @@ export default function BookingRow({ booking, type }: CurrentBookingProps) {
     if (type === 'current') {
       return `Until ${getTimeRemaining(booking.end_date)}`;
     }
-    return `Ended on ${formatDateEnglish(booking.end_date)}`;
+    return `Started on ${formatDateEnglish(booking.start_date)} - Ended on ${formatDateEnglish(booking.end_date)}`;
   }
 
   return (
