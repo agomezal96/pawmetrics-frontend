@@ -2,6 +2,7 @@
   display: none; /* Hidden in mobile */
   padding: 0.5rem 2rem;
   border-bottom: var(--text-gray);
+  background-color: var(--pure-white);
 }
 
 @media (min-width: 768px) {
