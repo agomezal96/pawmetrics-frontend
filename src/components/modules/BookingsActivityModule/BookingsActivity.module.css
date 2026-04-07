@@ -1,0 +1,52 @@
+.table-container {
+  min-height: 100px; /* This keeps the Bento box from collapsing */
+  overflow-y: auto;
+  height: 100%;
+}
+
+/* NEW: This class handles the transition */
+.tab-content {
+  animation: fadeIn 0.3s ease-out;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px); /* Start slightly higher instead of lower */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.tab-switch {
+  display: flex;
+  gap: 4px;
+  padding: 3px;
+  border-radius: 6px;
+}
+
+.tab-switch button {
+  border: none;
+  background: transparent;
+  padding: 4px 10px;
+  border-radius: 4px;
+  font-size: 1rem;
+  color: var(--text-gray);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab-switch button.active {
+  background: var(--pure-white);
+  font-weight: 600;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.booking-table {
+    display: flex;
+    flex-direction: column;
+}
+
