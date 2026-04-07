@@ -1,4 +1,4 @@
-import type { PetSpeciesType } from "./types";
+import type { PetSpeciesType } from "./Types";
 
 export interface Pet {
       id: number;
