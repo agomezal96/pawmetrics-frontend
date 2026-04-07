@@ -38,9 +38,7 @@ section {
 .is-list {
   flex-direction: column ;
   gap: 0; 
-  background-color:var(--pure-white);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  border: 1px solid var(--pure-white);
   overflow: hidden;
   box-shadow: none;
   border-radius: 8px;
