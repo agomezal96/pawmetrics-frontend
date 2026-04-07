@@ -1,0 +1,44 @@
+/* src/components/Shared/LoadingModule.module.css */
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem; /* Separación entre elementos */
+  border-radius: 16px;
+  height: 700px;
+
+}
+
+/* El Spinner: */
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(79, 70, 229, 0.1); /* Color del "fondo" del aro (muy suave) */
+  border-top-color: var(--brand); /* Color del "borde que gira" (tu color de acento azul/morado) */
+  border-radius: 50%; /* Lo hace redondo */
+  
+  /* Definimos la animación: girar infinitamente en 1 segundo con velocidad lineal */
+  animation: spin 1s linear infinite;
+}
+
+/* Los Textos */
+.loading-text {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0;
+  text-align: center;
+}
+
+.loading-subtext {
+  font-size: 1rem;
+  color: var(--text-gray);
+}
+
+/* La animación 'spin': De 0 a 360 grados */
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

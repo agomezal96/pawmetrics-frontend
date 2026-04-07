@@ -1,0 +1,72 @@
+.earning-card {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: white;
+  height: 100%; /* To fill the grid slot */
+  box-sizing: border-box;
+  width: 100%;
+}
+
+.box-content {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;       /* Aseguramos que sea fila */
+  flex-wrap: nowrap;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+
+.earning-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  gap: 0.5rem;
+  min-width: 0;
+}
+
+.earning-box h3 {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  color: var(--text-gray);
+  margin: 0 0 0.5rem 0;
+}
+
+.current-earnings {
+  color: var(--success);
+  font-size: 2.5rem;
+  font-weight: 600;
+}
+
+.earning-card h3 {
+  font-size: 1rem;
+}
+
+.pending-earnings {
+  color: var(--text-gray);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.current-earnings,
+.pending-earnings {
+  margin: 0;
+  line-height: 1.1;
+}
+
+.earning-box:first-child {
+  border-right: 1px solid var(--subtle-gray);
+}
+
+.time {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  text-align: right;
+  margin-top: auto;
+  padding-top: 0.5rem;
+}

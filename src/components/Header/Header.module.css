@@ -1,0 +1,57 @@
+.main-header {
+  padding: 0.75rem 1.5rem; /* Un poco más de aire a los lados */
+  display: flex;
+  justify-content: center;
+
+  /* Glassmorphism */
+  background-color: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.box {
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-family: 'Bogart', 'Times New Roman', Times, serif;
+  font-size: 1.5rem; /* Mobile */
+  font-weight: 800;
+  color: var(--text-black);
+  letter-spacing: -0.02em;
+}
+
+.avatar-container {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--brand);
+  transition: transform 0.2s ease;
+  cursor: pointer;
+}
+
+.avatar-container:hover {
+  transform: scale(1.05);
+}
+
+/* --- MEDIA QUERIES--- */
+
+@media (min-width: 768px) {
+  .logo {
+    font-size: 2rem; /* Desktop */
+  }
+
+  .avatar-container {
+    width: 48px;
+    height: 48px;
+  }
+}

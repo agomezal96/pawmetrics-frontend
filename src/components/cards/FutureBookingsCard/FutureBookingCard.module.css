@@ -1,0 +1,46 @@
+.future-booking-card{
+  padding: 1rem;
+}
+
+.date {
+  font-weight: 700;
+  font-size: 1rem;
+  color: var(--accent); /* El naranja/verde de Rover que tengas definido */
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  margin-bottom: 0.25rem;
+  text-align: left; 
+}
+
+.future-booking-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex-grow: 1;
+}
+
+.icon-and-name {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.pet-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.pet-name {
+  font-family: 'Fraunces';
+  font-weight: 600;
+  font-size: 1.3rem; 
+  margin: 0;
+  line-height: 1.2;
+}
+
+.service {
+  color: var(--text-gray);
+  font-size: 0.9rem;
+  margin: 0;
+  font-weight: 500;
+}

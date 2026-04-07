@@ -1,0 +1,22 @@
+.header-container {
+  display: none; /* Hidden in mobile */
+  padding: 0.5rem 2rem;
+  border-bottom: var(--text-gray);
+}
+
+@media (min-width: 768px) {
+  .header-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+    gap: 1.5rem;
+    border-bottom: 1px solid var(--subtle-gray);
+  }
+
+  .header-container span {
+    font-size: 0.8rem;
+    font-variant: small-caps;
+    letter-spacing: 0.05rem;
+    font-weight: 700;
+    color: var(--text-gray);
+  }
+}

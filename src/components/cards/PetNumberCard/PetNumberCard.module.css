@@ -1,0 +1,39 @@
+.pet-number-card {
+  height: 100%;
+  min-width: 140px;
+  display: flex;
+  align-items: center; /* Center the content */
+  justify-content: start;
+  border-radius: 12px;
+  flex: 1;
+  padding: 0.5rem 0;
+  gap: 1rem;
+}
+
+.icon-and-label {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.number-of-pets {
+  font-weight: 600;
+  font-size: 2rem;
+  margin: 0.2rem 0;
+  line-height: 1;
+}
+
+.label-text {
+  font-size: 0.9rem;
+  color: var(--text-gray);
+  font-weight: 500;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+@media (min-width: 1024px) {
+  .pet-number-card {
+    padding: 0;
+  }
+ }

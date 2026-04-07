@@ -1,10 +1,18 @@
-function App() {
+import MainLayout from './layouts/MainLayout';
+import Header from './components/Header';
+import Dashboard from './components/Dashboard';
+import Footer from './components/Footer/Footer';
 
+function App() {
   return (
     <>
-      <h1>This is the app component</h1>
+      <MainLayout>
+        <Header />
+        <Dashboard />
+        <Footer />
+      </MainLayout>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
