@@ -6,6 +6,7 @@ import {
   getTimeRemaining,
 } from '../../utils/date-formatter';
 import { capitalize } from '../../utils/capitalize';
+import { cleanFloat } from '../../utils/clean-float';
 
 interface CurrentBookingProps {
   booking: Booking;
@@ -54,7 +55,7 @@ export default function BookingRow({ booking, type }: CurrentBookingProps) {
 
       {/* Group 5: Price */}
       <div className={styles['price-info']}>
-        <p className={styles['price']}>{booking.price}$</p>
+        <p className={styles['price']}>{cleanFloat(booking.price)}$</p>
       </div>
     </article>
   );

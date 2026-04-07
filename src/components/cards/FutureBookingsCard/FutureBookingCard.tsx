@@ -3,6 +3,7 @@ import type { Booking } from '../../../types/booking';
 import styles from './FutureBookingCard.module.css';
 import { formatRelativeDate } from '../../../utils/date-formatter';
 import { capitalize } from '../../../utils/capitalize';
+import { cleanFloat } from '../../../utils/clean-float';
 
 interface FutureBookingProps {
   booking: Booking;
@@ -27,7 +28,7 @@ export default function FutureBookingCard({ booking }: FutureBookingProps) {
             <p className={styles['service']}>{capitalize(booking.service)}</p>
           </div>
         </div>
-        <p className={styles.price}>+ {booking.price}$</p>
+        <p className={styles.price}>+ {cleanFloat(booking.price)}$</p>
       </div>
     </article>
   );
