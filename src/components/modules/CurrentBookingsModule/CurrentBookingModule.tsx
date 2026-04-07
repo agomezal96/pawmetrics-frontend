@@ -10,7 +10,7 @@ interface CurrentBookingProps {
 export default function CurrentBookingModule({ bookings }: CurrentBookingProps) {
   return (
     <>
-      <DashboardSection sectionTitle="Current Bookings" isList={true}>
+      <DashboardSection sectionTitle="Current Bookings" isList={true} showSeeAll={true}>
         {bookings.length === 0 ? (
           <div className="empty-container">
             <p className="empty-text">No active bookings right now.</p>
