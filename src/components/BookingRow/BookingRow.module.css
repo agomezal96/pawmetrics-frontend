@@ -54,6 +54,7 @@
     box-shadow: none;
     text-align: start;
     gap: 1.5em;
+    padding: 1.2rem;
   }
 
   .pet-data {

@@ -1,10 +1,8 @@
 import styles from './Dashboard.module.css';
 import EarningsModule from '../modules/EarningsModule';
 import TotalPetsModule from '../modules/TotalPetsModule';
-import CurrentBookingModule from '../modules/CurrentBookingsModule';
 import FutureBookingsModule from '../modules/FutureBookingsModule';
 import ReviewModule from '../modules/ReviewModule/ReviewModule';
-
 import useGetRequest from '../../hooks/useGetRequest';
 import {
   type DashboardPeriod,
@@ -15,9 +13,9 @@ import LoadingDashboard from '../LoadingDashboard';
 import ErrorDashboard from '../ErrorDashboard/ErrorDashboard';
 import { useMemo, useState } from 'react';
 import PeriodSelector from '../PeriodSelector';
-import PastBookingsModule from '../modules/PastBookingsModule';
 import SitterCard from '../cards/SitterCard';
 import SitterScoreCardModule from '../modules/SitterScoreCardModule';
+import BookingsActivity from '../modules/BookingsActivityModule';
 
 export default function Dashboard() {
   const baseUrl = import.meta.env.VITE_API_METRICS_URL;
@@ -53,10 +51,9 @@ export default function Dashboard() {
   const { bookings, earnings, pets, reviews } = metrics;
   const { star_sitter_progress, global_score } = sitterScores;
 
-  // If the period is NOT 'this_year' or 'all_time', we consider it to be a history search.
-  const isHistoryMode = !['this_year', 'all_time', 'this_month'].includes(
-    period,
-  );
+  const defaultActivityTab = ['this_year', 'all_time', 'this_month'].includes(period) 
+  ? 'current' 
+  : 'past';
 
   return (
     <div className={styles['dashboard-container']}>
@@ -77,13 +74,14 @@ export default function Dashboard() {
           <EarningsModule earnings={earnings} />
           <TotalPetsModule petStats={pets} />
         </div>
-        {!isHistoryMode ? (
-          <>
-            <CurrentBookingModule bookings={bookings.current_bookings} />
-          </>
-        ) : (
-          <PastBookingsModule bookings={bookings.past_bookings} />
-        )}
+
+        {/* 1. TABS: Current vs Past (Unified for stability) */}
+      <BookingsActivity 
+        current={bookings.current_bookings} 
+        past={bookings.past_bookings} 
+        initialTab={defaultActivityTab}
+      />
+
         <FutureBookingsModule bookings={bookings.future_bookings} />
         <ReviewModule reviews={reviews.latest_reviews} />
       </div>
