@@ -1,7 +1,7 @@
 import MainLayout from './layouts/MainLayout';
-import Header from './components/Header';
 import Dashboard from './components/Dashboard';
-import Footer from './components/Footer/Footer';
+import Header from './components/molecules/Header';
+import Footer from './components/molecules/Footer';
 
 function App() {
   return (

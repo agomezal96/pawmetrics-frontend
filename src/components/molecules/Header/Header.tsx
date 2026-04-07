@@ -1,5 +1,5 @@
 import { PawPrint } from 'phosphor-react';
-import avatar from '../../assets/images/avatar.png';
+import avatar from '../../../assets/images/avatar.png';
 import styles from './Header.module.css'
 
 export default function Header() {
