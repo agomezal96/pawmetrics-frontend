@@ -71,8 +71,8 @@ export default function Dashboard() {
         Your stats for {period.replace('_', ' ')}
       </p> */}
       <div className={styles['bento-grid']}>
-        <SitterCard globalScore={global_score} />
-        <SitterScoreCardModule starSitterProgress={star_sitter_progress} />
+        <SitterCard globalScore={global_score} isLoading={areSitterScoresLoading} error={sitterScoreError}/>
+        <SitterScoreCardModule starSitterProgress={star_sitter_progress} isLoading={areSitterScoresLoading} error={sitterScoreError} />
         <div className={styles['box-with-modules']}>
           <EarningsModule earnings={earnings} />
           <TotalPetsModule petStats={pets} />
