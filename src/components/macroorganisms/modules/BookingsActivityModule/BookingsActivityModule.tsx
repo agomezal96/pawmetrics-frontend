@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import styles from './BookingsActivity.module.css';
+import styles from './BookingsActivityModule.module.css';
 import type { Booking } from '../../../../types/booking';
 import DashboardSection from '../../../organisms/DashboardSection';
 import BookingRow from '../../../molecules/BookingRow';
@@ -11,7 +11,7 @@ interface Props {
   initialTab?: 'current' | 'past';
 }
 
-export default function BookingsActivity({
+export default function BookingsActivityModule({
   current,
   past,
   initialTab = 'current',

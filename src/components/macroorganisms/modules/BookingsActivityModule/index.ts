@@ -1,1 +1,1 @@
-export { default } from './BookingsActivity';
+export { default } from './BookingsActivityModule';
