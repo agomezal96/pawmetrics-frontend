@@ -9,13 +9,13 @@ import {
   type DashboardMetrics,
   type SitterScores,
 } from '../../types/dashboard';
-import LoadingDashboard from '../LoadingDashboard';
-import ErrorDashboard from '../ErrorDashboard/ErrorDashboard';
 import { useMemo, useState } from 'react';
 import SitterScoreCardModule from '../modules/SitterScoreCardModule';
 import BookingsActivity from '../modules/BookingsActivityModule';
 import PeriodSelector from '../atoms/PeriodSelector';
 import SitterCard from '../organisms/cards/SitterCard';
+import ErrorDashboard from '../organisms/ErrorDashboard/ErrorDashboard';
+import LoadingDashboard from '../organisms/LoadingDashboard';
 
 export default function Dashboard() {
   const baseUrl = import.meta.env.VITE_API_METRICS_URL;

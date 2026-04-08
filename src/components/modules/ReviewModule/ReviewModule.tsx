@@ -1,5 +1,5 @@
 import type { Review } from '../../../types/reviews';
-import DashboardSection from '../../DashboardSection';
+import DashboardSection from '../../organisms/DashboardSection';
 import ReviewCard from '../../organisms/cards/ReviewCard';
 
 interface ReviewModuleProps {
