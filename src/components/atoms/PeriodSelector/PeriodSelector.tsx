@@ -1,5 +1,5 @@
+import type { DashboardPeriod } from '../../../types/dashboard';
 import styles from './PeriodSelector.module.css';
-import type { DashboardPeriod } from '../../types/dashboard';
 
 interface PeriodSelectorProps {
   currentPeriod: DashboardPeriod;
