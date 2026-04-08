@@ -1,0 +1,45 @@
+.description {
+  color: var(--text-gray);
+  font-size: 1rem;
+  display: none;
+}
+
+.metrics-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 1rem;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.progress-bar-bg {
+  flex: 1;
+  height: 10px;
+  background: #e9f7e8;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: var(--brand);
+  transition: width 0.6s ease-in-out;
+}
+
+.progressText {
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+@media (min-width: 768px) {
+  .description {
+    display: block;
+  }
+}
