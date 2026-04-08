@@ -3,19 +3,19 @@ import EarningsModule from '../modules/EarningsModule';
 import TotalPetsModule from '../modules/TotalPetsModule';
 import FutureBookingsModule from '../modules/FutureBookingsModule';
 import ReviewModule from '../modules/ReviewModule/ReviewModule';
-import useGetRequest from '../../hooks/useGetRequest';
+import useGetRequest from '../../../hooks/useGetRequest';
 import {
   type DashboardPeriod,
   type DashboardMetrics,
   type SitterScores,
-} from '../../types/dashboard';
+} from '../../../types/dashboard';
 import { useMemo, useState } from 'react';
 import SitterScoreCardModule from '../modules/SitterScoreCardModule';
 import BookingsActivity from '../modules/BookingsActivityModule';
-import PeriodSelector from '../atoms/PeriodSelector';
-import SitterCard from '../organisms/cards/SitterCard';
-import ErrorDashboard from '../organisms/ErrorDashboard/ErrorDashboard';
-import LoadingDashboard from '../organisms/LoadingDashboard';
+import PeriodSelector from '../../atoms/PeriodSelector';
+import SitterCard from '../../organisms/cards/SitterCard';
+import ErrorDashboard from '../../organisms/ErrorDashboard/ErrorDashboard';
+import LoadingDashboard from '../../organisms/LoadingDashboard';
 
 export default function Dashboard() {
   const baseUrl = import.meta.env.VITE_API_METRICS_URL;

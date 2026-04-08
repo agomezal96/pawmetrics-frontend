@@ -1,6 +1,6 @@
-import type { Booking } from '../../../types/booking';
-import DashboardSection from '../../organisms/DashboardSection';
-import FutureBookingCard from '../../organisms/cards/FutureBookingsCard';
+import type { Booking } from '../../../../types/booking';
+import DashboardSection from '../../../organisms/DashboardSection';
+import FutureBookingCard from '../../../organisms/cards/FutureBookingsCard';
 
 interface FutureBookingProps {
   bookings: Booking[];

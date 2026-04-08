@@ -1,6 +1,6 @@
-import type { StarSitterProgress } from '../../../types/dashboard';
-import DashboardSection from '../../organisms/DashboardSection';
-import SitterScoreCard from '../../organisms/cards/SitterScoreCard';
+import type { StarSitterProgress } from '../../../../types/dashboard';
+import DashboardSection from '../../../organisms/DashboardSection';
+import SitterScoreCard from '../../../organisms/cards/SitterScoreCard';
 
 interface SitterScoreCardProps {
   starSitterProgress: StarSitterProgress;
