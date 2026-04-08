@@ -1,22 +1,27 @@
 import type { Booking } from '../../../types/booking';
-import { capitalize } from '../../../utils/capitalize';
+import { bookingServiceFormatter } from '../../../utils/booking-service-formatter';
 import { cleanFloat } from '../../../utils/clean-float';
-import { formatDateEnglish, getTimeRemaining } from '../../../utils/date-formatter';
+import {
+  formatDateEnglish,
+  getTimeRemaining,
+} from '../../../utils/date-formatter';
 import styles from './BookingRow.module.css';
 import { Cat, Dog } from 'phosphor-react';
 
-
 interface CurrentBookingProps {
   booking: Booking;
-  type: 'current' | 'past';
+  type: 'current' | 'past' | 'future';
 }
 
 export default function BookingRow({ booking, type }: CurrentBookingProps) {
   function getDateLabel() {
     if (type === 'current') {
       return `Until ${getTimeRemaining(booking.end_date)}`;
+    } else if (type === 'past') {
+      return `Started on ${formatDateEnglish(booking.start_date)} - Ended on ${formatDateEnglish(booking.end_date)}`;
+    } else {
+      return `${getTimeRemaining(booking.start_date)}`;
     }
-    return `Started on ${formatDateEnglish(booking.start_date)} - Ended on ${formatDateEnglish(booking.end_date)}`;
   }
 
   return (
@@ -38,7 +43,9 @@ export default function BookingRow({ booking, type }: CurrentBookingProps) {
 
       {/* Group 2: Service */}
       <div className={styles['service-info']}>
-        <p className={styles.service}>{capitalize(booking.service)}</p>
+        <p className={styles.service}>
+          {bookingServiceFormatter(booking.service)}
+        </p>
       </div>
 
       {/* Group 3: Date */}
