@@ -1,7 +1,6 @@
 import styles from './Dashboard.module.css';
 import EarningsModule from '../modules/EarningsModule';
 import TotalPetsModule from '../modules/TotalPetsModule';
-import FutureBookingsModule from '../modules/FutureBookingsModule';
 import ReviewModule from '../modules/ReviewModule/ReviewModule';
 import useGetRequest from '../../../hooks/useGetRequest';
 import {
