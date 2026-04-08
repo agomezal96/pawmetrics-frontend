@@ -79,10 +79,9 @@ export default function Dashboard() {
       <BookingsActivityModule
         current={bookings.current_bookings} 
         past={bookings.past_bookings} 
+        future={bookings.future_bookings}
         initialTab={defaultActivityTab}
       />
-
-        <FutureBookingsModule bookings={bookings.future_bookings} />
         <ReviewModule reviews={reviews.latest_reviews} />
       </div>
     </div>

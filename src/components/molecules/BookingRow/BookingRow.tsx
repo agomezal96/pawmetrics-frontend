@@ -10,15 +10,18 @@ import { Cat, Dog } from 'phosphor-react';
 
 interface CurrentBookingProps {
   booking: Booking;
-  type: 'current' | 'past';
+  type: 'current' | 'past' | 'future';
 }
 
 export default function BookingRow({ booking, type }: CurrentBookingProps) {
   function getDateLabel() {
     if (type === 'current') {
       return `Until ${getTimeRemaining(booking.end_date)}`;
+    } else if (type === 'past') {
+      return `Started on ${formatDateEnglish(booking.start_date)} - Ended on ${formatDateEnglish(booking.end_date)}`;
+    } else {
+      return `${getTimeRemaining(booking.start_date)}`;
     }
-    return `Started on ${formatDateEnglish(booking.start_date)} - Ended on ${formatDateEnglish(booking.end_date)}`;
   }
 
   return (
