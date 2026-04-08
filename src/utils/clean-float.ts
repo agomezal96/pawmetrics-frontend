@@ -1,4 +1,4 @@
-function cleanFloat(input: string | number): number {
+export const  cleanFloat = (input: string | number): number => {
   // 1. Convert input to a float (parseFloat handles both strings and numbers in JS)
   // If it's already a number, it just returns it.
   const num = typeof input === 'string' ? parseFloat(input) : input;
@@ -14,4 +14,3 @@ function cleanFloat(input: string | number): number {
   return Number.isInteger(num) ? Math.trunc(num) : num;
 }
 
-export { cleanFloat };
