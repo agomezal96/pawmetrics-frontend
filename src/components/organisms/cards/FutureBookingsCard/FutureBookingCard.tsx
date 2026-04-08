@@ -1,9 +1,10 @@
 import { Cat, Dog } from 'phosphor-react';
-import type { Booking } from '../../../types/booking';
 import styles from './FutureBookingCard.module.css';
-import { formatRelativeDate } from '../../../utils/date-formatter';
-import { capitalize } from '../../../utils/capitalize';
-import { cleanFloat } from '../../../utils/clean-float';
+import type { Booking } from '../../../../types/booking';
+import { formatRelativeDate } from '../../../../utils/date-formatter';
+import { capitalize } from '../../../../utils/capitalize';
+import { cleanFloat } from '../../../../utils/clean-float';
+
 
 interface FutureBookingProps {
   booking: Booking;

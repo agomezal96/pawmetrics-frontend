@@ -1,5 +1,5 @@
-import type { StarSitterProgress } from '../../../types/dashboard';
-import { MetricCircle } from '../../atoms/MetricsCircle/MetricsCircle';
+import type { StarSitterProgress } from '../../../../types/dashboard';
+import { MetricCircle } from '../../../atoms/MetricsCircle/MetricsCircle';
 import styles from './SitterScoreCard.module.css';
 
 interface SitterRatingCardProps {

@@ -1,7 +1,7 @@
 import { Star } from 'phosphor-react';
 import styles from './SitterCard.module.css';
-import avatar from '../../../assets/images/avatar.png';
-import type { GlobalSitterScore } from '../../../types/dashboard';
+import avatar from '../../../../assets/images/avatar.png';
+import type { GlobalSitterScore } from '../../../../types/dashboard';
 
 interface SitterCardProps {
   globalScore: GlobalSitterScore;

@@ -2,8 +2,8 @@ import styles from './TotalPetsModule.module.css'
 
 import { Cat, Dog } from 'phosphor-react';
 import type { PetStats } from '../../../types/dashboard';
-import PetNumberCard from '../../cards/PetNumberCard';
 import DashboardSection from '../../DashboardSection';
+import PetNumberCard from '../../organisms/cards/PetNumberCard';
 
 interface TotalPetsModuleProps {
   petStats: PetStats;

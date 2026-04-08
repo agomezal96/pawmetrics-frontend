@@ -1,6 +1,6 @@
 import type { Review } from '../../../types/reviews';
-import ReviewCard from '../../cards/ReviewCard';
 import DashboardSection from '../../DashboardSection';
+import ReviewCard from '../../organisms/cards/ReviewCard';
 
 interface ReviewModuleProps {
   reviews: Review[];

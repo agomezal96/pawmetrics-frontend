@@ -12,10 +12,10 @@ import {
 import LoadingDashboard from '../LoadingDashboard';
 import ErrorDashboard from '../ErrorDashboard/ErrorDashboard';
 import { useMemo, useState } from 'react';
-import SitterCard from '../cards/SitterCard';
 import SitterScoreCardModule from '../modules/SitterScoreCardModule';
 import BookingsActivity from '../modules/BookingsActivityModule';
 import PeriodSelector from '../atoms/PeriodSelector';
+import SitterCard from '../organisms/cards/SitterCard';
 
 export default function Dashboard() {
   const baseUrl = import.meta.env.VITE_API_METRICS_URL;

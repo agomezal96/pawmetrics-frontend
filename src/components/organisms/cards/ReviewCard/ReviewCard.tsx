@@ -1,7 +1,7 @@
+import type { Review } from '../../../../types/reviews';
+import { formatRelativeDate } from '../../../../utils/date-formatter';
 import styles from './ReviewCard.module.css';
-import type { Review } from '../../../types/reviews';
 import { User } from 'phosphor-react';
-import { formatRelativeDate } from '../../../utils/date-formatter';
 
 interface ReviewCardProps {
   review: Review;

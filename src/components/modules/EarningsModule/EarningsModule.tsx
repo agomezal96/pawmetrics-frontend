@@ -1,6 +1,6 @@
 import type { EarningsStats } from '../../../types/dashboard';
-import EarningsCard from '../../cards/EarningsCard';
 import DashboardSection from '../../DashboardSection';
+import EarningsCard from '../../organisms/cards/EarningsCard';
 
 interface EarningsModuleProps {
   earnings: EarningsStats;
