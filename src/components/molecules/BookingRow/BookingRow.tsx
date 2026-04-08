@@ -1,10 +1,12 @@
 import type { Booking } from '../../../types/booking';
-import { capitalize } from '../../../utils/capitalize';
+import { bookingServiceFormatter } from '../../../utils/booking-service-formatter';
 import { cleanFloat } from '../../../utils/clean-float';
-import { formatDateEnglish, getTimeRemaining } from '../../../utils/date-formatter';
+import {
+  formatDateEnglish,
+  getTimeRemaining,
+} from '../../../utils/date-formatter';
 import styles from './BookingRow.module.css';
 import { Cat, Dog } from 'phosphor-react';
-
 
 interface CurrentBookingProps {
   booking: Booking;
@@ -38,7 +40,9 @@ export default function BookingRow({ booking, type }: CurrentBookingProps) {
 
       {/* Group 2: Service */}
       <div className={styles['service-info']}>
-        <p className={styles.service}>{capitalize(booking.service)}</p>
+        <p className={styles.service}>
+          {bookingServiceFormatter(booking.service)}
+        </p>
       </div>
 
       {/* Group 3: Date */}

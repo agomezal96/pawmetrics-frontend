@@ -1,10 +1,10 @@
 
 type ServiceType =
-  | 'Boarding'
-  | 'House Sitting'
-  | 'Drop-in Visits'
-  | 'Doggy Day Care'
-  | 'Dog Walking';
+  | 'boarding'
+  | 'sitting'
+  | 'drop_in'
+  | 'daycare'
+  | 'walking';
 
 type PetSpeciesType = 'cat' | 'dog'
 
