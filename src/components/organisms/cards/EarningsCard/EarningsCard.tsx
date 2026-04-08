@@ -1,4 +1,4 @@
-import type { EarningsStats } from '../../../types/dashboard';
+import type { EarningsStats } from '../../../../types/dashboard';
 import styles from './EarningsCard.module.css';
 
 interface EarningsCardProps {
