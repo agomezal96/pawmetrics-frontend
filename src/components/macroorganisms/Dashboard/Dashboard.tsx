@@ -1,7 +1,6 @@
 import styles from './Dashboard.module.css';
 import EarningsModule from '../modules/EarningsModule';
 import TotalPetsModule from '../modules/TotalPetsModule';
-import FutureBookingsModule from '../modules/FutureBookingsModule';
 import ReviewModule from '../modules/ReviewModule/ReviewModule';
 import useGetRequest from '../../../hooks/useGetRequest';
 import {
@@ -79,10 +78,9 @@ export default function Dashboard() {
       <BookingsActivityModule
         current={bookings.current_bookings} 
         past={bookings.past_bookings} 
+        future={bookings.future_bookings}
         initialTab={defaultActivityTab}
       />
-
-        <FutureBookingsModule bookings={bookings.future_bookings} />
         <ReviewModule reviews={reviews.latest_reviews} />
       </div>
     </div>

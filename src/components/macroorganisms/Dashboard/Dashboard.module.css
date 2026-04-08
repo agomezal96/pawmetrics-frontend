@@ -135,14 +135,11 @@
   .bento-grid > div:nth-child(3) {
     grid-column: span 1;
   }
-
   .bento-grid > section:nth-child(4) {
-    grid-column: span 4;
-  } /* Future */
+    grid-column: span 5;
+  } /* Bookings */
   .bento-grid > section:nth-child(5) {
-    grid-column: span 1;
-  } /* Reviews */
-  .bento-grid > section:nth-child(6) {
     grid-column: span 5;
   } /* Reviews */
+
 }
