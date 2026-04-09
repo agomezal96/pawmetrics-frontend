@@ -1,27 +1,41 @@
 import { useState, useEffect } from 'react';
 import styles from './BookingsActivityModule.module.css';
-import type { Booking } from '../../../../types/booking';
 import DashboardSection from '../../../organisms/DashboardSection';
 import EmptyMessage from '../../../atoms/EmptyMessage';
 import BookingTable from '../../../organisms/BookingTable';
 import TabButton from '../../../atoms/TabButton';
+import type { TimeLapseType } from '../../../../types/Types';
+import type { BookingStats } from '../../../../types/dashboard';
 
 interface Props {
-  current: Booking[];
-  past: Booking[];
-  future: Booking[];
-  initialTab?: 'current' | 'past' | 'future';
+  bookings: BookingStats;
+  initialTab?: TimeLapseType;
 }
 
 export default function BookingsActivityModule({
-  current,
-  past,
-  future,
   initialTab = 'current',
+  bookings,
 }: Props) {
-  const [activeTab, setActiveTab] = useState<'current' | 'past' | 'future'>(
-    initialTab,
-  );
+  const {
+    past_bookings: pastBookings,
+    current_bookings: currentBookings,
+    future_bookings: futureBookings,
+  } = bookings;
+
+  const [activeTab, setActiveTab] = useState<TimeLapseType>(initialTab);
+
+  const BOOKING_LIMIT = 10;
+
+  // Which list are we currently looking?
+
+  const activeList = {
+    current: currentBookings,
+    past: pastBookings,
+    future: futureBookings,
+  }[activeTab];
+
+  const hasMore = activeList.length > BOOKING_LIMIT;
+  const displayedBookings = activeList.slice(0, BOOKING_LIMIT);
 
   // Sync if the dashboard period changes
   useEffect(() => {
@@ -35,60 +49,53 @@ export default function BookingsActivityModule({
   };
 
   const renderTabContent = () => {
-    switch (activeTab) {
-      case 'current':
-        if (current.length === 0) {
-          return <EmptyMessage>No active bookings right now.</EmptyMessage>;
-        }
-        return (
-          <BookingTable
-            bookings={current}
-            dateLabel="End date"
-            timeLapse="current"
-          />
-        );
-      case 'past':
-        if (past.length === 0) {
-          return <EmptyMessage>No history found.</EmptyMessage>;
-        }
-        return (
-          <BookingTable bookings={past} dateLabel="Period" timeLapse="past" />
-        );
-      case 'future':
-        if (future.length === 0) {
-          return <EmptyMessage>No incoming bookings.</EmptyMessage>;
-        }
-        return (
-          <BookingTable
-            bookings={future}
-            dateLabel="Start date"
-            timeLapse="future"
-          />
-        );
+    // Empty messages
+    if (activeList.length === 0) {
+      const emptyMessages = {
+        current: 'No active bookings right now.',
+        past: 'No history found.',
+        future: 'No incoming bookings.',
+      };
+      return <EmptyMessage>{emptyMessages[activeTab]}</EmptyMessage>;
     }
+    // What text will be displayed in the booking Header (date)
+    const tableHeaderDateLabels = {
+      current: 'End date',
+      past: 'Period',
+      future: 'Start date',
+    };
+
+    return (
+      <BookingTable
+        bookings={displayedBookings}
+        dateLabel={tableHeaderDateLabels[activeTab]}
+        timeLapse={activeTab}
+      />
+    );
   };
 
   return (
     <DashboardSection
       sectionTitle={getSectionTitle()}
       isList={true}
+      showSeeAll={hasMore}
       headerElement={
         <div className={styles['tab-switch']}>
           <TabButton
             label="Active"
-            count={current.length}
+            count={currentBookings.length}
             isActive={activeTab === 'current'}
             onClick={() => setActiveTab('current')}
           />
           <TabButton
             label="Upcoming"
-            count={future.length}
+            count={futureBookings.length}
             isActive={activeTab === 'future'}
             onClick={() => setActiveTab('future')}
           />
           <TabButton
             label="History"
-            count={past.length}
+            count={pastBookings.length}
             isActive={activeTab === 'past'}
             onClick={() => setActiveTab('past')}
           />
