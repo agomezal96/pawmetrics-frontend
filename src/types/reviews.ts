@@ -5,5 +5,5 @@ export interface Review {
   booking: number;
   created_at: string;
   requester_name: string;
-  requester_name_url: string;
+  requester_image_url: string;
 }
