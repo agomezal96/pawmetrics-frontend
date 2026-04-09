@@ -86,9 +86,7 @@ export default function Dashboard() {
 
         {/* 1. TABS: Current vs Past (Unified for stability) */}
       <BookingsActivityModule
-        current={bookings.current_bookings} 
-        past={bookings.past_bookings} 
-        future={bookings.future_bookings}
+        bookings={bookings}
         initialTab={defaultActivityTab}
       />
         <ReviewModule reviews={reviews.latest_reviews} />
