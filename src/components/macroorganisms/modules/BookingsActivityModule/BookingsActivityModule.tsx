@@ -2,9 +2,8 @@ import { useState, useEffect } from 'react';
 import styles from './BookingsActivityModule.module.css';
 import type { Booking } from '../../../../types/booking';
 import DashboardSection from '../../../organisms/DashboardSection';
-import BookingRow from '../../../molecules/BookingRow';
-import BookingTableHeader from '../../../molecules/BookingTableHeader';
 import EmptyMessage from '../../../atoms/EmptyMessage';
+import BookingTable from '../../../organisms/BookingTable';
 
 interface Props {
   current: Booking[];
@@ -41,36 +40,29 @@ export default function BookingsActivityModule({
           return <EmptyMessage>No active bookings right now.</EmptyMessage>;
         }
         return (
-          <div className={styles['booking-table']}>
-            <BookingTableHeader date={'End date'} />
-            {current.map((b) => (
-              <BookingRow key={b.id} booking={b} type="current" />
-            ))}
-          </div>
+          <BookingTable
+            bookings={current}
+            dateLabel="End date"
+            timeLapse="current"
+          />
         );
       case 'past':
         if (past.length === 0) {
           return <EmptyMessage>No history found.</EmptyMessage>;
         }
         return (
-          <div className={styles['booking-table']}>
-            <BookingTableHeader date={'Period'} />
-            {past.map((b) => (
-              <BookingRow key={b.id} booking={b} type="past" />
-            ))}
-          </div>
+          <BookingTable bookings={past} dateLabel="Period" timeLapse="past" />
         );
       case 'future':
         if (future.length === 0) {
           return <EmptyMessage>No incoming bookings.</EmptyMessage>;
         }
         return (
-          <div className={styles['booking-table']}>
-            <BookingTableHeader date={'Start date'} />
-            {future.map((b) => (
-              <BookingRow key={b.id} booking={b} type="future" />
-            ))}
-          </div>
+          <BookingTable
+            bookings={future}
+            dateLabel="Start date"
+            timeLapse="future"
+          />
         );
     }
   };
