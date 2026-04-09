@@ -42,7 +42,6 @@ export default function Dashboard() {
     error: sitterScoreError,
   } = useGetRequest<SitterScores>(sitterScoresUrl);
 
-  console.log(sitterScores);
   if (isLoading) return <LoadingDashboard />;
   if (error) return <ErrorDashboard message={error} />;
   if (!metrics) return null;
@@ -52,14 +51,14 @@ export default function Dashboard() {
   const { star_sitter_progress, global_score } = sitterScores;
 
   const tabByPeriod: Record<DashboardPeriod, TimeLapseType> = {
-    'this_month': 'current',
-    'all_time': 'current',
-    'this_year': 'current',
-    'last_month': 'past',
+    this_month: 'current',
+    all_time: 'current',
+    this_year: 'current',
+    last_month: 'past',
     '3_months': 'past',
     '6_months': 'past',
     '12_months': 'past',
-    'last_year': 'past',
+    last_year: 'past',
   };
 
   const defaultActivityTab = tabByPeriod[period] || 'current';
@@ -77,19 +76,30 @@ export default function Dashboard() {
         Your stats for {period.replace('_', ' ')}
       </p> */}
       <div className={styles['bento-grid']}>
-        <SitterCard globalScore={global_score} isLoading={areSitterScoresLoading} error={sitterScoreError}/>
-        <SitterScoreCardModule starSitterProgress={star_sitter_progress} isLoading={areSitterScoresLoading} error={sitterScoreError} />
+        <SitterCard
+          globalScore={global_score}
+          isLoading={areSitterScoresLoading}
+          error={sitterScoreError}
+        />
+        <SitterScoreCardModule
+          starSitterProgress={star_sitter_progress}
+          isLoading={areSitterScoresLoading}
+          error={sitterScoreError}
+        />
         <div className={styles['box-with-modules']}>
           <EarningsModule earnings={earnings} />
           <TotalPetsModule petStats={pets} />
         </div>
 
         {/* 1. TABS: Current vs Past (Unified for stability) */}
-      <BookingsActivityModule
-        bookings={bookings}
-        initialTab={defaultActivityTab}
-      />
-        <ReviewModule reviews={reviews.latest_reviews} />
+        <BookingsActivityModule
+          bookings={bookings}
+          initialTab={defaultActivityTab}
+        />
+        <ReviewModule
+          reviews={reviews.latest_reviews}
+          totalReviews={reviews.total_reviews}
+        />
       </div>
     </div>
   );
