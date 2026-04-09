@@ -7,6 +7,7 @@ interface DashboardSectionProps {
   isList?: boolean;
   showSeeAll?: boolean;
   headerElement?: ReactNode;
+  totalCount?: number;
 }
 
 export default function DashboardSection({
@@ -15,6 +16,7 @@ export default function DashboardSection({
   isList,
   showSeeAll,
   headerElement,
+  totalCount
 }: DashboardSectionProps) {
   return (
     <section>
@@ -24,7 +26,7 @@ export default function DashboardSection({
         )}
         {showSeeAll && (
           <button type="button" className={styles['view-all']}>
-            View all &rarr;
+            View all {totalCount && `(${totalCount})`}
           </button>
         )}
       </header>
