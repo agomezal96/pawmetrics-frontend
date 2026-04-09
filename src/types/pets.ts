@@ -6,4 +6,5 @@ export interface Pet {
       species: PetSpeciesType;
       requester: string;
       requester_name: string;
+      image_url?: string | null;
 }

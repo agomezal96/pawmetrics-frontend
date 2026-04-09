@@ -29,13 +29,22 @@ export default function BookingRow({ booking, timeLapse }: BookingRowProps) {
     <article className={styles['booking-row']}>
       {/* Group 1: Pet */}
       <div className={styles['pet-data']}>
-        <div className="icon-wrapper">
-          {booking.pet_species === 'dog' ? (
-            <Dog size={24} />
-          ) : (
-            <Cat size={24} />
-          )}
-        </div>
+        {booking.pet_image_url ? (
+          <div className={styles['avatar-container']}>
+            <img
+              src={booking.pet_image_url}
+              alt={`${booking.pet_name}'s avatar`}
+            />
+          </div>
+        ) : (
+          <div className="icon-wrapper">
+            {booking.pet_species === 'dog' ? (
+              <Dog size={32} />
+            ) : (
+              <Cat size={32} />
+            )}
+          </div>
+        )}
         <div className={styles['pet-text']}>
           <p className={styles['pet-name']}>{booking.pet_name}</p>
           <p className={styles.breed}>{booking.pet_breed}</p>
