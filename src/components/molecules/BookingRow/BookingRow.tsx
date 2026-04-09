@@ -1,4 +1,5 @@
 import type { Booking } from '../../../types/booking';
+import type { TimeLapseType } from '../../../types/Types';
 import { bookingServiceFormatter } from '../../../utils/booking-service-formatter';
 import { cleanFloat } from '../../../utils/clean-float';
 import {
@@ -8,16 +9,16 @@ import {
 import styles from './BookingRow.module.css';
 import { Cat, Dog } from 'phosphor-react';
 
-interface CurrentBookingProps {
+interface BookingRowProps {
   booking: Booking;
-  type: 'current' | 'past' | 'future';
+  timeLapse: TimeLapseType;
 }
 
-export default function BookingRow({ booking, type }: CurrentBookingProps) {
+export default function BookingRow({ booking, timeLapse }: BookingRowProps) {
   function getDateLabel() {
-    if (type === 'current') {
+    if (timeLapse === 'current') {
       return `Until ${getTimeRemaining(booking.end_date)}`;
-    } else if (type === 'past') {
+    } else if (timeLapse === 'past') {
       return `Started on ${formatDateEnglish(booking.start_date)} - Ended on ${formatDateEnglish(booking.end_date)}`;
     } else {
       return `${getTimeRemaining(booking.start_date)}`;
