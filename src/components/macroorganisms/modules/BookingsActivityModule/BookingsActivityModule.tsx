@@ -4,6 +4,7 @@ import type { Booking } from '../../../../types/booking';
 import DashboardSection from '../../../organisms/DashboardSection';
 import BookingRow from '../../../molecules/BookingRow';
 import BookingTableHeader from '../../../molecules/BookingTableHeader';
+import EmptyMessage from '../../../atoms/EmptyMessage';
 
 interface Props {
   current: Booking[];
@@ -37,11 +38,7 @@ export default function BookingsActivityModule({
     switch (activeTab) {
       case 'current':
         if (current.length === 0) {
-          return (
-            <div className="empty-container">
-              <p className="empty-text">No active bookings right now.</p>
-            </div>
-          );
+          return <EmptyMessage>No active bookings right now.</EmptyMessage>;
         }
         return (
           <div className={styles['booking-table']}>
@@ -53,11 +50,7 @@ export default function BookingsActivityModule({
         );
       case 'past':
         if (past.length === 0) {
-          return (
-            <div className="empty-container">
-              <p className="empty-text">No history found.</p>
-            </div>
-          );
+          return <EmptyMessage>No history found.</EmptyMessage>;
         }
         return (
           <div className={styles['booking-table']}>
@@ -69,11 +62,7 @@ export default function BookingsActivityModule({
         );
       case 'future':
         if (future.length === 0) {
-          return (
-            <div className="empty-container">
-              <p className="empty-text">No incoming bookings.</p>
-            </div>
-          );
+          return <EmptyMessage>No incoming bookings.</EmptyMessage>;
         }
         return (
           <div className={styles['booking-table']}>
@@ -88,9 +77,7 @@ export default function BookingsActivityModule({
 
   return (
     <DashboardSection
-      sectionTitle={
-        getSectionTitle()
-      }
+      sectionTitle={getSectionTitle()}
       isList={true}
       headerElement={
         <div className={styles['tab-switch']}>
