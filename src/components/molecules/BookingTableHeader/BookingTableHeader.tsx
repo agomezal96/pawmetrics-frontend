@@ -1,15 +1,15 @@
 import styles from './BookingTableHeader.module.css';
 
 interface BookingTableHeaderProps {
-  date: string;
+  dateLabel: string;
 }
 
-export default function BookingTableHeader({ date }: BookingTableHeaderProps) {
+export default function BookingTableHeader({ dateLabel }: BookingTableHeaderProps) {
   return (
     <header className={styles['header-container']}>
       <span>Pet</span>
       <span>Service</span>
-      <span>{date}</span>
+      <span>{dateLabel}</span>
       <span>Owner</span>
       <span>Revenue</span>
     </header>

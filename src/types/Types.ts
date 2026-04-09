@@ -1,11 +1,7 @@
+type ServiceType = 'boarding' | 'sitting' | 'drop_in' | 'daycare' | 'walking';
 
-type ServiceType =
-  | 'boarding'
-  | 'sitting'
-  | 'drop_in'
-  | 'daycare'
-  | 'walking';
+type PetSpeciesType = 'cat' | 'dog';
 
-type PetSpeciesType = 'cat' | 'dog'
+type TimeLapseType = 'current' | 'past' | 'future';
 
-export type { ServiceType, PetSpeciesType };
+export type { ServiceType, PetSpeciesType, TimeLapseType };

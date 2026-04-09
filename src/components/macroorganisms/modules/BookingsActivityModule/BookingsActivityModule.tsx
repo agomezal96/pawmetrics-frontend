@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 import styles from './BookingsActivityModule.module.css';
 import type { Booking } from '../../../../types/booking';
 import DashboardSection from '../../../organisms/DashboardSection';
-import BookingRow from '../../../molecules/BookingRow';
-import BookingTableHeader from '../../../molecules/BookingTableHeader';
+import EmptyMessage from '../../../atoms/EmptyMessage';
+import BookingTable from '../../../organisms/BookingTable';
+import TabButton from '../../../atoms/TabButton';
 
 interface Props {
   current: Booking[];
@@ -37,81 +38,60 @@ export default function BookingsActivityModule({
     switch (activeTab) {
       case 'current':
         if (current.length === 0) {
-          return (
-            <div className="empty-container">
-              <p className="empty-text">No active bookings right now.</p>
-            </div>
-          );
+          return <EmptyMessage>No active bookings right now.</EmptyMessage>;
         }
         return (
-          <div className={styles['booking-table']}>
-            <BookingTableHeader date={'End date'} />
-            {current.map((b) => (
-              <BookingRow key={b.id} booking={b} type="current" />
-            ))}
-          </div>
+          <BookingTable
+            bookings={current}
+            dateLabel="End date"
+            timeLapse="current"
+          />
         );
       case 'past':
         if (past.length === 0) {
-          return (
-            <div className="empty-container">
-              <p className="empty-text">No history found.</p>
-            </div>
-          );
+          return <EmptyMessage>No history found.</EmptyMessage>;
         }
         return (
-          <div className={styles['booking-table']}>
-            <BookingTableHeader date={'Period'} />
-            {past.map((b) => (
-              <BookingRow key={b.id} booking={b} type="past" />
-            ))}
-          </div>
+          <BookingTable bookings={past} dateLabel="Period" timeLapse="past" />
         );
       case 'future':
         if (future.length === 0) {
-          return (
-            <div className="empty-container">
-              <p className="empty-text">No incoming bookings.</p>
-            </div>
-          );
+          return <EmptyMessage>No incoming bookings.</EmptyMessage>;
         }
         return (
-          <div className={styles['booking-table']}>
-            <BookingTableHeader date={'Start date'} />
-            {future.map((b) => (
-              <BookingRow key={b.id} booking={b} type="future" />
-            ))}
-          </div>
+          <BookingTable
+            bookings={future}
+            dateLabel="Start date"
+            timeLapse="future"
+          />
         );
     }
   };
 
   return (
     <DashboardSection
-      sectionTitle={
-        getSectionTitle()
-      }
+      sectionTitle={getSectionTitle()}
       isList={true}
       headerElement={
         <div className={styles['tab-switch']}>
-          <button
-            className={activeTab === 'current' ? styles.active : ''}
+          <TabButton
+            label="Active"
+            count={current.length}
+            isActive={activeTab === 'current'}
             onClick={() => setActiveTab('current')}
-          >
-            Active ({current.length})
-          </button>
-          <button
-            className={activeTab === 'future' ? styles.active : ''}
+          />
+          <TabButton
+            label="Upcoming"
+            count={future.length}
+            isActive={activeTab === 'future'}
             onClick={() => setActiveTab('future')}
-          >
-            Upcoming ({future.length})
-          </button>
-          <button
-            className={activeTab === 'past' ? styles.active : ''}
+          />
+          <TabButton
+            label="History"
+            count={past.length}
+            isActive={activeTab === 'past'}
             onClick={() => setActiveTab('past')}
-          >
-            History ({past.length})
-          </button>
+          />
         </div>
       }
     >

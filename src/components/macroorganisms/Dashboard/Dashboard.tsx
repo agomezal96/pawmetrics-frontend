@@ -15,6 +15,7 @@ import SitterCard from '../../organisms/cards/SitterCard';
 import ErrorDashboard from '../../organisms/ErrorDashboard/ErrorDashboard';
 import LoadingDashboard from '../../organisms/LoadingDashboard';
 import BookingsActivityModule from '../modules/BookingsActivityModule';
+import type { TimeLapseType } from '../../../types/Types';
 
 export default function Dashboard() {
   const baseUrl = import.meta.env.VITE_API_METRICS_URL;
@@ -50,9 +51,18 @@ export default function Dashboard() {
   const { bookings, earnings, pets, reviews } = metrics;
   const { star_sitter_progress, global_score } = sitterScores;
 
-  const defaultActivityTab = ['this_year', 'all_time', 'this_month'].includes(period) 
-  ? 'current' 
-  : 'past';
+  const tabByPeriod: Record<DashboardPeriod, TimeLapseType> = {
+    'this_month': 'current',
+    'all_time': 'current',
+    'this_year': 'current',
+    'last_month': 'past',
+    '3_months': 'past',
+    '6_months': 'past',
+    '12_months': 'past',
+    'last_year': 'past',
+  };
+
+  const defaultActivityTab = tabByPeriod[period] || 'current';
 
   return (
     <div className={styles['dashboard-container']}>

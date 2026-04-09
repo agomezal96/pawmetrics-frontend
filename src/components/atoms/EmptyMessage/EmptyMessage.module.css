@@ -1,0 +1,19 @@
+.empty-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 180px;
+  height: 100%;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+
+.empty-text {
+  color: var(--text-gray);
+  font-size: 1rem;
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
