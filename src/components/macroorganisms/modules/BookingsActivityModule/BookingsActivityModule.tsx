@@ -4,6 +4,7 @@ import type { Booking } from '../../../../types/booking';
 import DashboardSection from '../../../organisms/DashboardSection';
 import EmptyMessage from '../../../atoms/EmptyMessage';
 import BookingTable from '../../../organisms/BookingTable';
+import TabButton from '../../../atoms/TabButton';
 
 interface Props {
   current: Booking[];
@@ -73,24 +74,24 @@ export default function BookingsActivityModule({
       isList={true}
       headerElement={
         <div className={styles['tab-switch']}>
-          <button
-            className={activeTab === 'current' ? styles.active : ''}
+          <TabButton
+            label="Active"
+            count={current.length}
+            isActive={activeTab === 'current'}
             onClick={() => setActiveTab('current')}
-          >
-            Active ({current.length})
-          </button>
-          <button
-            className={activeTab === 'future' ? styles.active : ''}
+          />
+          <TabButton
+            label="Upcoming"
+            count={future.length}
+            isActive={activeTab === 'future'}
             onClick={() => setActiveTab('future')}
-          >
-            Upcoming ({future.length})
-          </button>
-          <button
-            className={activeTab === 'past' ? styles.active : ''}
+          />
+          <TabButton
+            label="History"
+            count={past.length}
+            isActive={activeTab === 'past'}
             onClick={() => setActiveTab('past')}
-          >
-            History ({past.length})
-          </button>
+          />
         </div>
       }
     >
