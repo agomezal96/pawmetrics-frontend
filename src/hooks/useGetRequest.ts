@@ -22,7 +22,6 @@ export default function useGetRequest<T>(
           );
         }
         const stringedUrl = queryUrl.toString();
-        console.log('🚀 Fetching from:', stringedUrl);
 
         const response = await fetch(stringedUrl);
 
@@ -36,6 +35,7 @@ export default function useGetRequest<T>(
           );
         }
         const backendData = await response.json();
+        console.log(backendData);
         setRequestData(backendData);
 
       } catch (error) {
