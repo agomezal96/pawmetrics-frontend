@@ -43,11 +43,12 @@ section {
 
 .view-all {
   color: var(--accent);
-  font-size: 0.875rem;
+  font-size: 1rem;
   border: 0;
   background-color: transparent;
   cursor: pointer;
   padding: 0.5rem;
+  font-weight: 600;
 }
 
 .is-list {

@@ -12,10 +12,11 @@ export default function ReviewModule({
   reviews,
   totalReviews,
 }: ReviewModuleProps) {
-  const hasMore = totalReviews > reviews.length;
+  const REVIEW_DISPLAY_LIMIT = 3;
+  const hasMore = totalReviews > REVIEW_DISPLAY_LIMIT;
   return (
     <>
-      <DashboardSection sectionTitle="Latest Reviews" showSeeAll={hasMore}>
+      <DashboardSection sectionTitle="Latest Reviews" showSeeAll={hasMore} totalCount={totalReviews}>
         {reviews.length === 0 ? (
           <EmptyMessage>No reviews yet. Keep up the good work!</EmptyMessage>
         ) : (

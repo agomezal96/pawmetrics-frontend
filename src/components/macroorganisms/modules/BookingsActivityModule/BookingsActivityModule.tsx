@@ -79,23 +79,24 @@ export default function BookingsActivityModule({
       sectionTitle={getSectionTitle()}
       isList={true}
       showSeeAll={hasMore}
+      totalCount={activeList.length}
       headerElement={
         <div className={styles['tab-switch']}>
           <TabButton
             label="Active"
-            count={currentBookings.length}
+            count={currentBookings.slice(0, BOOKING_LIMIT).length}
             isActive={activeTab === 'current'}
             onClick={() => setActiveTab('current')}
           />
           <TabButton
             label="Upcoming"
-            count={futureBookings.length}
+            count={futureBookings.slice(0, BOOKING_LIMIT).length}
             isActive={activeTab === 'future'}
             onClick={() => setActiveTab('future')}
           />
           <TabButton
             label="History"
-            count={pastBookings.length}
+            count={pastBookings.slice(0, BOOKING_LIMIT).length}
             isActive={activeTab === 'past'}
             onClick={() => setActiveTab('past')}
           />
